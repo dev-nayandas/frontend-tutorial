@@ -4,7 +4,7 @@ npm create vite@latest tic-tac-toe -- --template react
 ```
 `##` Install Tailwind css dependencies
 ```javascript
-npm install -D tailwind css postcss autoprefixer
+npm install -D tailwindcss postcss autoprefixer
 ```
 `##` Initial Tailwind css
 ```javascript
@@ -17,9 +17,34 @@ content: [
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
 ```
-`##` Clean index.css and below declarations
+`##` Clean index.css and add below declarations
 ```javascript
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
+`##` Add animation using className, at index.css
+```javascript
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .animate-updown {
+        animation-name: animate-updownAnim;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+    }
+
+    @keyframes animate-updownAnim {
+        from {
+            transform: translateY(-20px);
+        }
+        to {
+            transform: translateY(20px);
+        }
+    }
+}
 ```
