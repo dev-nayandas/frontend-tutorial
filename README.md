@@ -10,3 +10,10 @@ npm install -D tailwind css postcss autoprefixer
 ```javascript
 npx tailwindcss init -p
 ```
+`##` at tailwind.config
+```javascript
+content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+```
