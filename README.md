@@ -17,3 +17,9 @@ content: [
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
 ```
+`##` Clean index.css and below declarations
+```javascript
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
