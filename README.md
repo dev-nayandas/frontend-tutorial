@@ -1,14 +1,2 @@
-create a project 
-```npm create vite@latest tic-tac-toe -- --template react
+<span style="color: red;">This is a red line of text.</span>
 
-Install tailwind css
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-
-
-The above Markdown will render as:
-
-python
-def hello_world():
-    print("Hello, World!")
-```
