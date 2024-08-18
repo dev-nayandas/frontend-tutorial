@@ -2,8 +2,11 @@
 ```javascript 
 npm create vite@latest tic-tac-toe -- --template react
 ```
-`##` Install Tailwind
+`##` Install Tailwind css dependencies
 ```javascript
-npm install -D tailwindcss postcss autoprefixer
+npm install -D tailwind css postcss autoprefixer
+```
+`##` Initial Tailwind css
+```javascript
 npx tailwindcss init -p
 ```
