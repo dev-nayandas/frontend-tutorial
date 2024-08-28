@@ -52,3 +52,29 @@ content: [
 
 - [How To Handle form In react form code](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/AddTaskModal.jsx)
 - [How To Handle form In react parent code](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/TaskBoard.jsx)
+
+`##` Basic Add and edit by same form in an array 
+
+```javascript
+function handleAddEditTask(newTask, isAdd) {
+        if (isAdd) {
+            setTasks([...tasks, newTask]);
+        } else {
+            setTasks(
+                tasks.map((task) => {
+                    if (task.id === newTask.id) {
+                        return newTask;
+                    }
+                    return task;
+                })
+            );
+        }
+
+       handleCloseClick();
+    }
+
+    function handleEditTask(task) {
+        setTaskToUpdate(task);
+        setShowAddModal(true);
+    }
+```
