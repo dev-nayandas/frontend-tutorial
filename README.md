@@ -1,29 +1,40 @@
 `##` Make a project
-```javascript 
+
+```javascript
 npm create vite@latest tic-tac-toe -- --template react
 ```
+
 `##` Install Tailwind css dependencies
+
 ```javascript
 npm install -D tailwindcss postcss autoprefixer
 ```
+
 `##` Initial Tailwind css
+
 ```javascript
 npx tailwindcss init -p
 ```
+
 `##` at tailwind.config
+
 ```javascript
 content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
 ```
+
 `##` Clean index.css and add below declarations
+
 ```javascript
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
+
 `##` Add animation using className, at index.css
+
 ```javascript
 @tailwind base;
 @tailwind components;
@@ -48,86 +59,126 @@ content: [
     }
 }
 ```
+
 `##` Basic React Form Handle
 
 - [How To Handle form In react form code](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/AddTaskModal.jsx)
 - [How To Handle form In react parent code](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/TaskBoard.jsx)
 
-`##` Basic Add and edit by same form in an array 
+`##` Basic Add and edit by same form in an array
+
 - [Form's details](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/AddTaskModal.jsx)
 - [Parents details](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/TaskBoard.jsx)
 - [Edit details](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/TaskList.jsx)
 
-
 ```javascript
 function handleAddEditTask(newTask, isAdd) {
-        if (isAdd) {
-            setTasks([...tasks, newTask]);
-        } else {
-            setTasks(
-                tasks.map((task) => {
-                    if (task.id === newTask.id) {
-                        return newTask;
-                    }
-                    return task;
-                })
-            );
+  if (isAdd) {
+    setTasks([...tasks, newTask]);
+  } else {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === newTask.id) {
+          return newTask;
         }
+        return task;
+      })
+    );
+  }
 
-       handleCloseClick();
-    }
+  handleCloseClick();
+}
 
-    function handleEditTask(task) {
-        setTaskToUpdate(task);
-        setShowAddModal(true);
-    }
+function handleEditTask(task) {
+  setTaskToUpdate(task);
+  setShowAddModal(true);
+}
 ```
 
-`##` Basic Delete item 
+`##` Basic Delete item
 
 ```javascript
-   function handleDeleteTask(taskId) {
-        const tasksAfterDelete = tasks.filter((task) => task.id !== taskId);
-        setTasks(tasksAfterDelete);
-    }
+function handleDeleteTask(taskId) {
+  const tasksAfterDelete = tasks.filter((task) => task.id !== taskId);
+  setTasks(tasksAfterDelete);
+}
 ```
 
-`##` Basic Delete Delete all items 
+`##` Basic Delete all items
+
 ```javascript
-  function handleDeleteAllClick() {
-        tasks.length = 0;
-        setTasks([...tasks]);
-    }
+function handleDeleteAllClick() {
+  tasks.length = 0;
+  setTasks([...tasks]);
+}
 ```
 
 `##` Basic Toggle
 
 ```javascript
-      function handleFavorite(taskId) {
-        // This portion of the commented code is not fully perfect. Here
-        // we are not doing the deep cloning of the tasks array. The tasks array has
-        // objects inside, while using the spread operator, it will only make the shallow copy.
-        // But we need to do the deep copy.
+function handleFavorite(taskId) {
+  // This portion of the commented code is not fully perfect. Here
+  // we are not doing the deep cloning of the tasks array. The tasks array has
+  // objects inside, while using the spread operator, it will only make the shallow copy.
+  // But we need to do the deep copy.
 
-        // We are not removing this commented code as it was part of the recording.
-        // But the same code is now made better and written below.
-        /*
+  // We are not removing this commented code as it was part of the recording.
+  // But the same code is now made better and written below.
+  /*
         const taskIndex = tasks.findIndex((task) => task.id === taskId);
         const newTasks = [...tasks];
         newTasks[taskIndex].isFavorite = !newTasks[taskIndex].isFavorite;
         setTasks(newTasks);
         */
 
-        // The better way of managing updates in the object within an array as a
-        // state in react.
-        setTasks(tasks.map((task) => {
-            if (task.id === taskId) {
-                return {...task, isFavorite: !task.isFavorite};
-            } else {
-                return task;
-            }
-        }))
-    }
-
+  // The better way of managing updates in the object within an array as a
+  // state in react.
+  setTasks(
+    tasks.map((task) => {
+      if (task.id === taskId) {
+        return { ...task, isFavorite: !task.isFavorite };
+      } else {
+        return task;
+      }
+    })
+  );
+}
 ```
 
+`##` Basic Search Implementation
+
+```Javascript
+ // search component
+  const [searchTerm, setSearchTerm] = useState("")
+  const handleClick = (e) =>{
+    e.preventDefault()
+    onSearch(searchTerm)// SearchTerm will come as props
+  }
+ //input and button's code
+    <input
+        type="search"
+        id="search-dropdown"
+        className="z-20 block w-full bg-gray-800 px-4 py-2 pr-10 focus:outline-none"
+        placeholder="Search Task"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        required
+    />
+    <button
+        onClick={handleClick}
+        type="submit"
+        className="absolute right-2 top-0 h-full rounded-e-lg text-white md:right-4"
+    >
+        Search
+        <span className="sr-only">Search</span>
+    </button>
+
+     //Parent's code
+         const handleSearch = (searchTerm) => {
+        console.log(searchTerm);
+        const filteredTasks = tasks.filter(task => task.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        setTasks([...filteredTasks]);
+  };
+
+
+```
