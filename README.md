@@ -174,10 +174,10 @@ function handleFavorite(taskId) {
     </button>
 
      //Parent's code
-         const handleSearch = (searchTerm) => {
-        console.log(searchTerm);
-        const filteredTasks = tasks.filter(task => task.title.toLowerCase().includes(searchTerm.toLowerCase()));
-        setTasks([...filteredTasks]);
+        const handleSearch = (searchTerm) => {
+            console.log(searchTerm);
+            const filteredTasks = tasks.filter(task => task.title.toLowerCase().includes(searchTerm.toLowerCase()));
+            setTasks([...filteredTasks]);
   };
 
 
