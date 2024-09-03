@@ -179,6 +179,77 @@ function handleFavorite(taskId) {
             const filteredTasks = tasks.filter(task => task.title.toLowerCase().includes(searchTerm.toLowerCase()));
             setTasks([...filteredTasks]);
   };
+```
+`##` How to  implement sort
+```javascript
+  //The array 
+    const defaultData = [
+    {
+      id: crypto.randomUUID().toString(),
+      title: "The Silent Patient",
+      author: "Alex Michaelides",
+      publicationDate: "2019-02-05",
+      price: "20",
+      rating: "4.5",
+      isFavorite: false,
+      cover: book 
+    }]
+ //Parent's code
+  const handleSort =(sortOption) => {
+    let sortedBooks = [...books];
+    switch (sortOption) {
+      case 'name_asc':
+        sortedBooks.sort((a, b) => a.title.localeCompare(b.title));
+        break;
+      case 'name_desc':
+        sortedBooks.sort((a, b) => b.title.localeCompare(a.title));
+        break;
+      case 'year_asc':
+        sortedBooks.sort((a, b) => {
+          const yearA = new Date(a.publicationDate).getFullYear();
+          const yearB = new Date(b.publicationDate).getFullYear();
+          return yearA - yearB;
+        });
+        break;
+      case 'year_desc':
+        sortedBooks.sort((a, b) => {
+          const yearA = new Date(a.publicationDate).getFullYear();
+          const yearB = new Date(b.publicationDate).getFullYear();
+          return yearB - yearA;
+        });
+        break;
+      default:
+        // No sorting
+        break;
+    }
+    
+    setBooks(sortedBooks);
+  }
+//child'd code 
+/* eslint-disable react/prop-types */
+const Sort = ({onSortChange}) => {
+  const handleChange = (event) => {
+    onSortChange(event.target.value);
+    console.log(event.target.value)
+  };
 
+  return (
+    <div className="flex items-stretch space-x-3">
+      <select
+        className="cursor-pointer rounded-md border px-4 py-2 text-center text-gray-600"
+        name="sortBy"
+        id="sortBy"
+        onChange={handleChange}
+      >
+        <option value="">Sort</option>
+        <option value="name_asc">Name (A-Z)</option>
+        <option value="name_desc">Name (Z-A)</option>
+        <option value="year_asc">Publication Year (Oldest)</option>
+        <option value="year_desc">Publication Year (Newest)</option>
+      </select>
+    </div>
+  );
+};
 
+export default Sort;
 ```
