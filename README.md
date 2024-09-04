@@ -257,8 +257,16 @@ export default Sort;
 `##` How to export data by a function
 ```javascript
 function getAllMovies() {
-    return data;// Here data is the array
+    return data;// Here data is the array and we can import and call the function in other components
 }
 
 export { getAllMovies };
+```
+`##` How to filter data by a function
+```javascript
+function getFavoriteMovies() {
+    return data.filter(movie => movie.isFavorite); // Here data is the array and we can import and call the function in other components
+}
+
+export { getFavoriteMovies };
 ```
