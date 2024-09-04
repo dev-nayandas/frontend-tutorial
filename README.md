@@ -253,3 +253,12 @@ const Sort = ({onSortChange}) => {
 
 export default Sort;
 ```
+
+`##` How to export data by a function
+```javascript
+function getAllMovies() {
+    return data;// Here data is the array
+}
+
+export { getAllMovies };
+```
