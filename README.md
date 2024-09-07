@@ -332,3 +332,74 @@ export default Rating;
   <Rating value={movie?.rating} />
 </div>;
 ```
+
+`##` How to open modal with data Rating
+```javascript
+/* eslint-disable react/prop-types */
+import { useState } from "react";
+import MovieDetails from "./MovieDetails";
+
+
+const MovieCard = ({ movie }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  const handleCloseMovieDetails = () => {
+    setSelectedMovie(null);
+    setShowModal(false);
+  };
+  const handleModalClick = (movie) => {
+
+    setSelectedMovie(movie);
+    setShowModal(true);
+  };
+
+  return (
+    <>
+      {showModal && (
+        <MovieDetails movie={selectedMovie} onClose={handleCloseMovieDetails} />
+      )}
+      <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
+        <a  onClick={() =>handleModalClick(movie)} href="#">
+        {/* Other codes */}
+        </a>
+      </figure>
+    </>
+  );
+};
+
+export default MovieCard;
+
+
+
+
+///Modal codes
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import { getImageUrl } from "./utils/cine-utility";
+
+const MovieDetails = ({movie, onClose}) => {
+
+  return (
+    <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[420px] sm:max-w-[600px] lg:max-w-[984px] p-4 max-h-[90vh] overflow-auto">
+        <div className="bg-white shadow-md dark:bg-[#12141D] rounded-2xl sm:grid sm:grid-cols-[2fr_1fr] overflow-hidden">
+          <div className="p-5 lg:p-11">
+            <div className="grid lg:grid-cols-2 gap-2">
+              <a
+                onClick={onClose}
+                className="border border-[#74766F] rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#6F6F6F] dark:text-gray-200 font-semibold text-sm"
+                href="#"
+              >
+                Cancel
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MovieDetails;
+```
