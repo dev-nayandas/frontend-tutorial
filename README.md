@@ -180,57 +180,60 @@ function handleFavorite(taskId) {
             setTasks([...filteredTasks]);
   };
 ```
-`##` How to  implement sort
+
+`##` How to implement sort
+
 ```javascript
-  //The array 
-    const defaultData = [
-    {
-      id: crypto.randomUUID().toString(),
-      title: "The Silent Patient",
-      author: "Alex Michaelides",
-      publicationDate: "2019-02-05",
-      price: "20",
-      rating: "4.5",
-      isFavorite: false,
-      cover: book 
-    }]
- //Parent's code
-  const handleSort =(sortOption) => {
-    let sortedBooks = [...books];
-    switch (sortOption) {
-      case 'name_asc':
-        sortedBooks.sort((a, b) => a.title.localeCompare(b.title));
-        break;
-      case 'name_desc':
-        sortedBooks.sort((a, b) => b.title.localeCompare(a.title));
-        break;
-      case 'year_asc':
-        sortedBooks.sort((a, b) => {
-          const yearA = new Date(a.publicationDate).getFullYear();
-          const yearB = new Date(b.publicationDate).getFullYear();
-          return yearA - yearB;
-        });
-        break;
-      case 'year_desc':
-        sortedBooks.sort((a, b) => {
-          const yearA = new Date(a.publicationDate).getFullYear();
-          const yearB = new Date(b.publicationDate).getFullYear();
-          return yearB - yearA;
-        });
-        break;
-      default:
-        // No sorting
-        break;
-    }
-    
-    setBooks(sortedBooks);
+//The array
+const defaultData = [
+  {
+    id: crypto.randomUUID().toString(),
+    title: "The Silent Patient",
+    author: "Alex Michaelides",
+    publicationDate: "2019-02-05",
+    price: "20",
+    rating: "4.5",
+    isFavorite: false,
+    cover: book,
+  },
+];
+//Parent's code
+const handleSort = (sortOption) => {
+  let sortedBooks = [...books];
+  switch (sortOption) {
+    case "name_asc":
+      sortedBooks.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "name_desc":
+      sortedBooks.sort((a, b) => b.title.localeCompare(a.title));
+      break;
+    case "year_asc":
+      sortedBooks.sort((a, b) => {
+        const yearA = new Date(a.publicationDate).getFullYear();
+        const yearB = new Date(b.publicationDate).getFullYear();
+        return yearA - yearB;
+      });
+      break;
+    case "year_desc":
+      sortedBooks.sort((a, b) => {
+        const yearA = new Date(a.publicationDate).getFullYear();
+        const yearB = new Date(b.publicationDate).getFullYear();
+        return yearB - yearA;
+      });
+      break;
+    default:
+      // No sorting
+      break;
   }
-//child'd code 
+
+  setBooks(sortedBooks);
+};
+//child'd code
 /* eslint-disable react/prop-types */
-const Sort = ({onSortChange}) => {
+const Sort = ({ onSortChange }) => {
   const handleChange = (event) => {
     onSortChange(event.target.value);
-    console.log(event.target.value)
+    console.log(event.target.value);
   };
 
   return (
@@ -255,17 +258,20 @@ export default Sort;
 ```
 
 `##` How to export data by a function
+
 ```javascript
 function getAllMovies() {
-    return data;// Here data is the array and we can import and call the function in other components
+  return data; // Here data is the array and we can import and call the function in other components
 }
 
 export { getAllMovies };
 ```
+
 `##` How to filter data by a function
+
 ```javascript
 function getFavoriteMovies() {
-    return data.filter(movie => movie.isFavorite); // Here data is the array and we can import and call the function in other components
+  return data.filter((movie) => movie.isFavorite); // Here data is the array and we can import and call the function in other components
 }
 
 export { getFavoriteMovies };
@@ -274,31 +280,55 @@ export { getFavoriteMovies };
 `##` How to make image url generating function for react vite projects
 
 ```javascript
-///make a folder called utils and create a file called cine-utility.js 
-const getImageUrl = (name) =>{
-   return new URL(`../assets/movie-covers/${name}`, import.meta.url).href;
-}
-export {getImageUrl}
-
-
+///make a folder called utils and create a file called cine-utility.js
+const getImageUrl = (name) => {
+  return new URL(`../assets/movie-covers/${name}`, import.meta.url).href;
+};
+export { getImageUrl };
 
 /// how to use this function
 /// eslint-disable react/prop-types , one thing to be remembered that is cover title name and cover image name should be same
 import Rating from "./Rating";
 import tag from "./assets/tag.svg";
-import  {getImageUrl}  from "./utils/cine-utility";
+import { getImageUrl } from "./utils/cine-utility";
 
-const MovieCard = ({movie}) => {
-  console.log(movie)
+const MovieCard = ({ movie }) => {
+  console.log(movie);
   return (
     <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
-      <img className="w-full object-cover" src={getImageUrl(movie?.cover)} alt="" />
+      <img
+        className="w-full object-cover"
+        src={getImageUrl(movie?.cover)}
+        alt=""
+      />
     </figure>
   );
 };
 
 export default MovieCard;
-
 ```
 
+`##` How to make Rating components
 
+```javascript
+///component
+/* eslint-disable react/prop-types */
+import star from "./assets/star.svg";
+const Rating = ({ value }) => {
+  const stars = Array(value).fill(star);
+  return (
+    <>
+      {stars.map((star, index) => (
+        <img key={index} src={star} width="14" height="14" alt="" />
+      ))}
+    </>
+  );
+};
+export default Rating;
+
+
+///use of the rating component, jus pass the value to the rating component which is a number
+<div className="flex items-center space-x-1 mb-5">
+  <Rating value={movie?.rating} />
+</div>;
+```
