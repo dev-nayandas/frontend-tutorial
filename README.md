@@ -1,3 +1,5 @@
+[Basic Toggle](#basic-toggle)
+
 `##` Make a project
 
 ```javascript
@@ -114,6 +116,7 @@ function handleDeleteAllClick() {
 ```
 
 `##` Basic Toggle
+## basic-toggle
 
 ```javascript
 function handleFavorite(taskId) {
@@ -375,8 +378,6 @@ export default MovieCard;
 
 
 ///Modal codes
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { getImageUrl } from "./utils/cine-utility";
 
 const MovieDetails = ({movie, onClose}) => {
