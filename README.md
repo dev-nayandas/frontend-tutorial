@@ -278,8 +278,10 @@ export { getFavoriteMovies };
 const getImageUrl = (name) =>{
    return new URL(`../assets/movie-covers/${name}`, import.meta.url).href;
 }
-
 export {getImageUrl}
+
+
+
 /// how to use this function
 /// eslint-disable react/prop-types , one thing to be remembered that is cover title name and cover image name should be same
 import Rating from "./Rating";
