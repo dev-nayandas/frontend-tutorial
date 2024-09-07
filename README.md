@@ -333,9 +333,10 @@ export default Rating;
 </div>;
 ```
 
-`##` How to open modal with data Rating
+`##` How to open modal with data 
 ```javascript
-/* eslint-disable react/prop-types */
+
+///Card codes
 import { useState } from "react";
 import MovieDetails from "./MovieDetails";
 
