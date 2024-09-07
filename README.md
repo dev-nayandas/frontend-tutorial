@@ -270,3 +270,33 @@ function getFavoriteMovies() {
 
 export { getFavoriteMovies };
 ```
+
+`##` How to make image url generating function for react vite projects
+
+```javascript
+///make a folder called utils and create a file called cine-utility.js 
+const getImageUrl = (name) =>{
+   return new URL(`../assets/movie-covers/${name}`, import.meta.url).href;
+}
+
+export {getImageUrl}
+/// how to use this function
+/// eslint-disable react/prop-types , one thing to be remembered that is cover title name and cover image name should be same
+import Rating from "./Rating";
+import tag from "./assets/tag.svg";
+import  {getImageUrl}  from "./utils/cine-utility";
+
+const MovieCard = ({movie}) => {
+  console.log(movie)
+  return (
+    <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
+      <img className="w-full object-cover" src={getImageUrl(movie?.cover)} alt="" />
+    </figure>
+  );
+};
+
+export default MovieCard;
+
+```
+
+
