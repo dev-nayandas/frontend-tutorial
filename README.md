@@ -1,14 +1,14 @@
-[Make a project](#make-project)
-[Tailwind Installation](#tailwind-install)
-[Tailwind Initialize](#initialize-tailwind-css)
-[Tailwind Config](#tailwind-css-config)
-[index.css config](#index-css-config)
-[Animation Addition at tailwind](#add-animation-at-tailwind)
-[Basic Form Handle](#form-handle)
+[Make a project](#make-project)<br>
+[Tailwind Installation](#tailwind-install)<br>
+[Tailwind Initialize](#initialize-tailwind-css)<br>
+[Tailwind Config](#tailwind-css-config)<br>
+[index.css config](#index-css-config)<br>
+[Animation Addition at tailwind](#add-animation-at-tailwind)<br>
+[Basic Form Handle](#form-handle)<br>
 
 
-[Basic Toggle](#basic-toggle)
-[Stop Propagation](#stop-propagation)
+[Basic Toggle](#basic-toggle)<br>
+[Stop Propagation](#stop-propagation)<br>
 
 `##` Make a project
 ## make-project
