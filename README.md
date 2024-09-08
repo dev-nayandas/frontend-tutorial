@@ -5,10 +5,19 @@
 [index.css config](#index-css-config)<br>
 [Animation Addition at tailwind](#add-animation-at-tailwind)<br>
 [Basic Form Handle](#form-handle)<br>
-
-
+[Basic add and edit by same form](#basic-add-and-edit-by-same-form)<br>
+[Basic delete an item](#basic-delete-item)<br>
+[Basic delete all item](#basic-delete-all)<br>
 [Basic Toggle](#basic-toggle)<br>
+[Basic Search ](#basic-search)<br>
+[Sort Implementations](#sort-implementations)<br>
+[Export Data By a function](#export-data-by-function)<br>
+[Filter data By a function](#filter-data-by-function)<br>
+[Image url generation by a function and how to use it](#image-url-generator-function)<br>
+[Make a Rating Component to dynamic rating](#rating-component)<br>
+[How to open a modal with data](#modal-with-data)<br>
 [Stop Propagation](#stop-propagation)<br>
+
 
 `##` Make a project
 ## make-project
@@ -91,6 +100,8 @@ content: [
 - [How To Handle form In react parent code](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/TaskBoard.jsx)
 
 `##` Basic Add and edit by same form in an array
+## basic-add-and-edit-by-same-form
+
 
 - [Form's details](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/AddTaskModal.jsx)
 - [Parents details](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/TaskBoard.jsx)
@@ -121,6 +132,7 @@ function handleEditTask(task) {
 ```
 
 `##` Basic Delete item
+## basic-delete-item
 
 ```javascript
 function handleDeleteTask(taskId) {
@@ -130,6 +142,8 @@ function handleDeleteTask(taskId) {
 ```
 
 `##` Basic Delete all items
+## basic-delete-all
+
 
 ```javascript
 function handleDeleteAllClick() {
@@ -172,6 +186,7 @@ function handleFavorite(taskId) {
 ```
 
 `##` Basic Search Implementation
+## basic-search
 
 ```Javascript
  // search component
@@ -208,6 +223,7 @@ function handleFavorite(taskId) {
 ```
 
 `##` How to implement sort
+## sort-implementations
 
 ```javascript
 //The array
@@ -284,7 +300,7 @@ export default Sort;
 ```
 
 `##` How to export data by a function
-
+## export-data-by-function
 ```javascript
 function getAllMovies() {
   return data; // Here data is the array and we can import and call the function in other components
@@ -294,6 +310,7 @@ export { getAllMovies };
 ```
 
 `##` How to filter data by a function
+## filter-data-by-function
 
 ```javascript
 function getFavoriteMovies() {
@@ -304,6 +321,7 @@ export { getFavoriteMovies };
 ```
 
 `##` How to make image url generating function for react vite projects
+## image-url-generator-function
 
 ```javascript
 ///make a folder called utils and create a file called cine-utility.js
@@ -335,6 +353,7 @@ export default MovieCard;
 ```
 
 `##` How to make Rating components
+## rating-component
 
 ```javascript
 ///component
@@ -360,6 +379,7 @@ export default Rating;
 ```
 
 `##` How to open modal with data 
+## modal-with-data
 ```javascript
 
 ///Card codes
