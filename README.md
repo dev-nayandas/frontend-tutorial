@@ -18,6 +18,7 @@
 [How to open a modal with data](#modal-with-data)<br>
 [Stop Propagation](#stop-propagation)<br>
 [How to use context api](#context-api)<br>
+[How to implement dark theme](#dark-theme)<br>
 
 
 `##` Make a project
@@ -138,7 +139,7 @@ function handleEditTask(task) {
 ```javascript
 function handleDeleteTask(taskId) {
   const tasksAfterDelete = tasks.filter((task) => task.id !== taskId);
-  setTasks(tasksAfterDelete);
+  setTasks([...tasksAfterDelete]);
 }
 ```
 
@@ -530,7 +531,7 @@ export {MovieContext};
 
 
 
-// provide data  necessary   child
+// provide data to necessary   child
   /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { MovieContext } from "./context";
@@ -628,4 +629,97 @@ const MovieCard = ({ movie }) => {
 
 export default MovieCard;
 
+```
+
+`##`  how to implement dark theme
+## dark-theme
+
+```javascript
+// create a a theme context at context folder's index.js file like below
+/* eslint-disable react-hooks/rules-of-hooks */
+import { createContext } from "react";
+
+
+const MovieContext = createContext();
+const ThemeContext = createContext();
+
+
+export {MovieContext, ThemeContext};
+
+
+
+// Wrap the pages by context provider like below
+import { useState } from "react";
+import { MovieContext, ThemeContext } from "./context";
+import Page from "./Page";
+
+function App() {
+  const [cartData, setCartData] = useState([]);
+  const [darkMode, setDarkMode] = useState(true);
+  return (
+    <>
+      <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+        <MovieContext.Provider value={{ cartData, setCartData }}>
+          <Page />
+        </MovieContext.Provider>
+      </ThemeContext.Provider>
+    </>
+  );
+}
+
+export default App;
+
+
+// config tailwind like below
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",// We have to add this 
+  theme: {
+		extend: {
+			container: {
+				center: true,
+				padding: "1.25rem",
+			},
+			colors: {
+				primary: '#00D991',
+				dark: "#171923",
+				light: "#fff",
+				body: "#1D1E28"
+			},
+		},
+	},
+  plugins: [],
+}
+
+
+// Add dynamic classes to the pages parent div like below
+import { useContext } from "react";
+import Footer from "./Footer";
+import MovieList from "./MovieList";
+import NavBar from "./NavBar";
+import SideBar from "./SideBar";
+import { ThemeContext } from "./context";
+
+const Page = () => {
+  const { darkMode } = useContext(ThemeContext);
+
+  return (
+    <div className={`h-full w-full ${darkMode ? "dark" : ""}`}> {/*add classes here*/}
+      <NavBar />
+      <main>
+        <div className="container grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
+          <SideBar />
+          <MovieList />
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Page;
 ```
