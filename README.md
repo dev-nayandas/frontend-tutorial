@@ -1,24 +1,41 @@
+[Make a project](#make-project)
+[Tailwind Installation](#tailwind-install)
+[Tailwind Initialize](#initialize-tailwind-css)
+[Tailwind Config](#tailwind-css-config)
+[index.css config](#index-css-config)
+[Animation Addition at tailwind](#add-animation-at-tailwind)
+[Basic Form Handle](#form-handle)
+
+
 [Basic Toggle](#basic-toggle)
+[Stop Propagation](#stop-propagation)
 
 `##` Make a project
+## make-project
 
 ```javascript
 npm create vite@latest tic-tac-toe -- --template react
 ```
 
 `##` Install Tailwind css dependencies
+## tailwind-install
+
 
 ```javascript
 npm install -D tailwindcss postcss autoprefixer
 ```
 
 `##` Initial Tailwind css
+## initialize-tailwind-css
+
 
 ```javascript
 npx tailwindcss init -p
 ```
 
 `##` at tailwind.config
+## tailwind-css-config
+
 
 ```javascript
 content: [
@@ -28,6 +45,8 @@ content: [
 ```
 
 `##` Clean index.css and add below declarations
+## index-css-config
+
 
 ```javascript
 @tailwind base;
@@ -36,6 +55,8 @@ content: [
 ```
 
 `##` Add animation using className, at index.css
+## add-animation-at-tailwind
+
 
 ```javascript
 @tailwind base;
@@ -63,6 +84,8 @@ content: [
 ```
 
 `##` Basic React Form Handle
+## form-handle
+
 
 - [How To Handle form In react form code](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/AddTaskModal.jsx)
 - [How To Handle form In react parent code](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/TaskBoard.jsx)
@@ -404,4 +427,67 @@ const MovieDetails = ({movie, onClose}) => {
 };
 
 export default MovieDetails;
+```
+`##`  How to stop propagation
+## stop-propagation
+```javascript
+/* eslint-disable react/prop-types */
+import { useState } from "react";
+import MovieDetails from "./MovieDetails";
+import Rating from "./Rating";
+import tag from "./assets/tag.svg";
+import { getImageUrl } from "./utils/cine-utility";
+
+const MovieCard = ({ movie }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  const handleCloseMovieDetails = () => {
+    setSelectedMovie(null);
+    setShowModal(false);
+  };
+  const handleModalClick = (movie) => {
+    setSelectedMovie(movie);
+    setShowModal(true);
+  };
+
+  const handleAddToCart = (e, movie) => {
+    e.stopPropagation();
+    console.log(movie)
+  }
+
+  return (
+    <>
+      {showModal && (
+        <MovieDetails movie={selectedMovie} onClose={handleCloseMovieDetails} />
+      )}
+      <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
+        <a onClick={() => handleModalClick( movie)} href="#">
+          <img
+            className="w-full object-cover"
+            src={getImageUrl(movie?.cover)}
+            alt=""
+          />
+          <figcaption className="pt-4">
+            <h3 className="text-xl mb-1">{movie?.title}</h3>
+            <p className="text-[#575A6E] text-sm mb-2">{movie?.genre}</p>
+            <div className="flex items-center space-x-1 mb-5">
+              <Rating value={movie?.rating} />
+            </div>
+            <a
+              className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
+              href="#"
+              onClick={(e) => handleAddToCart(e, movie)}
+            >
+              <img src={tag} alt="" />
+              <span>$100 | Add to Cart</span>
+            </a>
+          </figcaption>
+        </a>
+      </figure>
+    </>
+  );
+};
+
+export default MovieCard;
 ```
