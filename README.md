@@ -19,6 +19,7 @@
 [Stop Propagation](#stop-propagation)<br>
 [How to use context api](#context-api)<br>
 [How to implement dark theme](#dark-theme)<br>
+[How to implement useReducer ](#use-reducer)<br>
 
 
 `##` Make a project
@@ -724,8 +725,8 @@ const Page = () => {
 export default Page;
 ```
 
-`##`  how to implement dark theme
-## dark-theme
+`##`  how to use useReducer
+## use-reducer
 
 ```javascript
 // How to use use reducer
