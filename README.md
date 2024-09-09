@@ -20,6 +20,7 @@
 [How to use context api](#context-api)<br>
 [How to implement dark theme](#dark-theme)<br>
 [How to implement useReducer ](#use-reducer)<br>
+[How to implement React Toastify ](#react-toastify)<br>
 
 
 `##` Make a project
@@ -729,7 +730,6 @@ export default Page;
 ## use-reducer
 
 ```javascript
-// How to use use reducer
 // make a folder called reducer at src and make a file with reducer name example CartReducer.js
 // and write the logic with switch case
 /* eslint-disable no-unreachable */
@@ -957,3 +957,90 @@ const ShopingCard = ({ onClose }) => {
 export default ShopingCard;
 ```
 
+`##`  how to use react toastify
+## react-toastify
+
+```javascript
+//install the package and css at parent level like this
+npm install --save react-toastify
+
+// Import the ToastContainer and css  and keep near the parent like this
+import { useReducer, useState } from "react";
+import { MovieContext, ThemeContext } from "./context";
+import Page from "./Page";
+import { cartReducer, initialState } from "./reducers/CartReducer";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+function App() {
+  const [darkMode, setDarkMode] = useState(true);
+  const [state, dispatch] = useReducer(cartReducer, initialState)
+  return (
+    <>
+      <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+        <MovieContext.Provider value={{ state, dispatch }}>
+          <Page />
+          <ToastContainer/>
+        </MovieContext.Provider>
+      </ThemeContext.Provider>
+    </>
+  );
+}
+
+export default App;
+
+// Now use it where necessary
+// first we need to import the toast
+import { toast } from "react-toastify";
+
+const MovieCard = ({ movie }) => {
+
+
+  const handleAddToCart = (e, movie) => {
+    e.stopPropagation();
+    const found = state.cartData.find((item) => item.id === movie.id);
+
+    if (found) {
+
+      toast.error(`The movie ${movie?.title} Already in the cart`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    } else {
+
+     dispatch({
+       type: "ADD_TO_CART",
+       payload: {
+            ...movie
+       }
+     })
+      setShowModal(false);
+      // toast.success(`Added the movie ${movie?.title} successfully`);
+      toast.success(`Added the movie ${movie?.title} successfully`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
+    }
+  };
+
+  return (
+    <>
+      {/* other code */}
+    </>
+  );
+};
+
+export default MovieCard;
+```
