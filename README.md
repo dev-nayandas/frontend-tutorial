@@ -1050,3 +1050,29 @@ export default MovieCard;
 `##`  Open weather link
 ## open-weather-map
 - [Open weather](https://openweathermap.org/current)
+
+
+`##`  How to set .env variables and import
+## use-reducer
+
+```javascript
+//create a new Environment file called .env at root file where package.json exists
+// take necessary parameters here like bellow
+
+VITE_WEATHERE_API_KEY = d2944e3de3b546d31c0f9d21c14d4afb
+
+// client side env must start with VITE_
+
+// Ignore .env at gitIgnore like below
+node_modules
+dist
+dist-ssr
+*.local
+.env
+
+//Import necessary parameters here like bellow where necessary
+ const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_WEATHERE_API_KEY}&units={metric}`)
+
+ ```
+
+
