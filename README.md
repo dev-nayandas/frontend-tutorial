@@ -1080,7 +1080,7 @@ dist-ssr
  `##`  How to create a custom hook and how to use it with context api composition pattern
 ## custom-hook
 ```javascript
- // create a custom folder at src folder.
+ // create a  folder at src called uesWeather or any other name start with the word use
  // a example of  custom hook given below
  import { useEffect } from "react";
 import { useState } from "react";
