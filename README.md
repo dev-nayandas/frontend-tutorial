@@ -21,6 +21,8 @@
 [How to implement dark theme](#dark-theme)<br>
 [How to implement useReducer ](#use-reducer)<br>
 [How to implement React Toastify ](#react-toastify)<br>
+[Open Weather Link ](#open-weather-map)<br>
+
 
 
 `##` Make a project
@@ -1044,3 +1046,7 @@ const MovieCard = ({ movie }) => {
 
 export default MovieCard;
 ```
+
+`##`  Open weather link
+## open-weather-map
+- [Open weather](https://openweathermap.org/current)
