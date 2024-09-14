@@ -23,6 +23,7 @@
 [How to implement React Toastify ](#react-toastify)<br>
 [Open Weather Link ](#open-weather-map)<br>
 [How to set and use .env ](#env-setting)<br>
+[How to create and use custom hook and how to use context api with React composition pattern ](#custom-hook)<br>
 
 
 
@@ -1076,7 +1077,7 @@ dist-ssr
 
  ```
 
- `##`  How to create a custom hook and how to use it
+ `##`  How to create a custom hook and how to use it with context api composition pattern
 ## custom-hook
 ```javascript
  // create a custom folder at src folder.
