@@ -22,6 +22,7 @@
 [How to implement useReducer ](#use-reducer)<br>
 [How to implement React Toastify ](#react-toastify)<br>
 [Open Weather Link ](#open-weather-map)<br>
+[How to set and use .env ](#env-setting)<br>
 
 
 
@@ -1053,7 +1054,7 @@ export default MovieCard;
 
 
 `##`  How to set .env variables and import
-## use-reducer
+## env-setting
 
 ```javascript
 //create a new Environment file called .env at root file where package.json exists
@@ -1075,4 +1076,187 @@ dist-ssr
 
  ```
 
+ `##`  How to create a custom hook and how to use it
+## custom-hook
+```javascript
+ // create a custom folder at src folder.
+ // a example of  custom hook given below
+ import { useEffect } from "react";
+import { useState } from "react";
+
+
+const useWeather = () => {
+    const [weatherData, setWeatherData] = useState({
+        location: "",
+        climate: "",
+        temperature: "",
+        maxTemperature: "",
+        minTemperature: "",
+        humidity: "",
+        cloudPercentage: "",
+        wind: "",
+        time: "",
+        latitude: "",
+        longitude: "",
+    });
+    const[loading, setLoading] = useState({
+        state: false,
+        message: "",
+    })
+    const [error, setError] = useState(null);
+
+    const featchWeatherData = async (latitude, longitude) => {
+        try {
+            setLoading({
+                state: true,
+                message: "Fetching weather data..."
+            })
+
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_WEATHERE_API_KEY}&units={metric}`)
+            if(!response.ok) {
+                const errorMessage = `Fetching weather data failed: ${response.status}`;
+                throw new Error(errorMessage)
+            }
+
+            const data = await response.json();
+
+            const updateWeatherData = {
+                ...weatherData,
+                location: data?.name,
+                climate: data?.weather[0]?.description,
+                temperature: data?.main?.temp,
+                maxTemperature: data?.main?.temp_max,
+                minTemperature: data.main.temp_min,
+                humidity: data?.main?.humidity,
+                cloudPercentage: data?.clouds?.all,
+                wind: data?.wind?.speed,
+                time: data?.dt,
+                latitude: latitude,
+                longitude: longitude,
+            }
+
+            setWeatherData(updateWeatherData);
+
+            
+        } catch (e) {
+            setError(e.message);
+            
+        }finally{
+            setLoading({
+                state: false,
+                message: ""
+            })
+
+        }
+    }
+
+    useEffect(() => {
+        setLoading({
+            loading: true,
+            message: "Fetching weather data..."
+        })
+        navigator.geolocation.getCurrentPosition((position) =>{
+            featchWeatherData(position.coords.latitude, position.coords.longitude)
+        })
+       
+    }, [])
+
+    return {weatherData, loading, error}
+}
+
+export default useWeather;
+
+// then create a new file at hooks folder and create a new file called index.js to export multiple hook from one file. like this:
+import useWeather from "./useWeather";
+
+export {useWeather}
+
+//use anywhere like below (simple pattern)
+import { useWeather } from "./hooks";
+
+const WeatherBoard = () => {
+  const {weatherData, loading, error} = useWeather()
+  console.log(weatherData, loading, error)
+  return (
+    <main>
+      {/*other code */}
+    </main>
+  );
+};
+
+export default WeatherBoard;
+
+// use by context api with React composition pattern
+// steps for composition pattern
+// step 1: create folder at src called context inside this create a file called index.js, and create a context one and export it like below 
+import { createContext } from "react";
+
+const WeatherContext = createContext("")
+
+export { WeatherContext }
+
+// step 2: create a folder at src called provider an create a file called WeatherProvider.jsx , file name will be as per file type
+// make a provider like below
+import { WeatherContext } from "../context";
+import { useWeather } from "../hooks";
+
+const WeatherProvider = ({children}) => {
+    const {weatherData, loading, error} = useWeather()
+  return (
+    <WeatherContext.Provider value={{weatherData, loading, error}}>
+      {children}
+    </WeatherContext.Provider>
+  );
+};
+
+export default WeatherProvider;
+
+//Then make a file called index.js at Provider folder
+// call and export the WeatherProvider like below
+import WeatherProvider from "./WeatherProvider";
+
+export { WeatherProvider}
+
+// step 3: Wrap all necessary child with this provider like below
+import Header from "./Header";
+import WeatherBoard from "./WeatherBoard";
+import bodyBg from "../src/assets/body-bg.png";
+import { WeatherProvider } from "./provider";
+
+const App = () => {
+  return (
+    <WeatherProvider>
+      <div
+        className="bg-body font-[Roboto] text-light bg-no-repeat bg-cover h-screen grid place-items-center"
+        style={{ backgroundImage: `url(${bodyBg})` }}
+      >
+        <Header />
+        <WeatherBoard />
+      </div>
+    </WeatherProvider>
+  );
+};
+
+export default App;
+
+// step 4: Then use this data where necessary like below:
+import { useContext } from "react";
+import AddToFavourite from "./AddToFavourite";
+import WeatherCondition from "./WeatherCondition";
+import WeatherHeading from "./WeatherHeading";
+import { WeatherContext } from "./context";
+
+const WeatherBoard = () => {
+  const {weatherData} = useContext(WeatherContext)
+  console.log(weatherData)
+  return (
+    <main>
+      {/* other codes*/}
+    </main>
+  );
+};
+
+export default WeatherBoard;
+
+```
 
