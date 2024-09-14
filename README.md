@@ -1241,9 +1241,6 @@ export default App;
 
 // step 4: Then use this data where necessary like below:
 import { useContext } from "react";
-import AddToFavourite from "./AddToFavourite";
-import WeatherCondition from "./WeatherCondition";
-import WeatherHeading from "./WeatherHeading";
 import { WeatherContext } from "./context";
 
 const WeatherBoard = () => {
