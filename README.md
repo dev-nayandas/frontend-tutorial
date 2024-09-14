@@ -1073,7 +1073,7 @@ dist-ssr
 .env
 
 //Import necessary parameters here like bellow where necessary
- const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_WEATHERE_API_KEY}&units={metric}`)
+ const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_WEATHERE_API_KEY}&units=metric`)
 
  ```
 
