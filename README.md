@@ -24,8 +24,8 @@
 [Open Weather Link ](#open-weather-map)<br>
 [How to set and use .env ](#env-setting)<br>
 [How to create and use custom hook and how to use context api with React composition pattern ](#custom-hook)<br>
-[How to make utility function for formatted date](#formatted-date)
-[How to show icon by a function+](#dynamic-icon)
+[How to make utility function for formatted date](#formatted-date)<br>
+[How to show icon by a function+](#dynamic-icon)<br>
 
 
 
