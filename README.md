@@ -24,6 +24,7 @@
 [Open Weather Link ](#open-weather-map)<br>
 [How to set and use .env ](#env-setting)<br>
 [How to create and use custom hook and how to use context api with React composition pattern ](#custom-hook)<br>
+[How to make utility function for formatted date](#formatted-date)
 
 
 
@@ -1241,6 +1242,7 @@ const App = () => {
 export default App;
 
 // step 4: Then use this data where necessary like below:
+// look how conditionally rendered
 import { useContext } from "react";
 import { WeatherContext } from "./context";
 
@@ -1249,7 +1251,23 @@ const WeatherBoard = () => {
   console.log(weatherData)
   return (
     <main>
-      {/* other codes*/}
+        <section className="">
+        <div className="container">
+          <div className="grid bg-black/20 rounded-xl backdrop-blur-md border-2 lg:border-[3px] border-white/[14%] px-4 lg:px-14 py-6 lg:py-10 min-h-[520px] max-w-[1058px] mx-auto">
+            <div className="grid md:grid-cols-2 gap-10 md:gap-6">
+              {loading.state? (
+                <p>{loading.message}</p>
+              ) : (
+                <>
+                  <AddToFavourite />
+                  <WeatherHeading weatherData={weatherData} />
+                  <WeatherCondition />
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
@@ -1257,4 +1275,58 @@ const WeatherBoard = () => {
 export default WeatherBoard;
 
 ```
+
+ `##`  How to make utility function for formatted date
+## formatted-date
+```javascript
+ // create a  folder at src called utils then make a file called date-utils.js and make  the function like below
+ // data may come like this  :  1726417186
+ // after use te function output will be like: 10:19 PM- Sunday, September 15, 2024
+ const getFormattedDate = (value, type, isMS) =>{
+    if(!type) return;
+
+    if(!isMS) {
+        value = value * 1000;
+    }
+
+    const date = new Date(value);
+
+    let options;
+
+    if(type === 'date'){
+        options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        }
+    } else if(type === 'time'){
+        options = {
+            hour: 'numeric',
+            minute: 'numeric',
+        }
+    }
+    return new Intl.DateTimeFormat("en-us", options).format(date)
+}
+
+export  {getFormattedDate};
+
+//How to use this  utility function for formatted date
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+
+import { getFormattedDate } from "./utils/date-utils";
+const WeatherHeading = () => {
+  const { weatherData, loading } = useContext(WeatherContext);
+  return (
+    <div>
+     {/* Other codes  */}
+      <p className="text-sm lg:text-lg">{getFormattedDate(weatherData?.time , "time" , false)}- {getFormattedDate(weatherData?.time, "date", false )}</p>
+    </div>
+  );
+};
+
+export default WeatherHeading;
+
+ ```
 
