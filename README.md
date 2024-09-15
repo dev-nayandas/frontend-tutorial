@@ -25,6 +25,7 @@
 [How to set and use .env ](#env-setting)<br>
 [How to create and use custom hook and how to use context api with React composition pattern ](#custom-hook)<br>
 [How to make utility function for formatted date](#formatted-date)
+[How to show icon by a function+](#dynamic-icon)
 
 
 
@@ -1316,12 +1317,14 @@ export  {getFormattedDate};
 /* eslint-disable no-unused-vars */
 
 import { getFormattedDate } from "./utils/date-utils";
+
 const WeatherHeading = () => {
   const { weatherData, loading } = useContext(WeatherContext);
+  const { climate, location, temperature, time } = weatherData;
   return (
     <div>
      {/* Other codes  */}
-      <p className="text-sm lg:text-lg">{getFormattedDate(weatherData?.time , "time" , false)}- {getFormattedDate(weatherData?.time, "date", false )}</p>
+      <p className="text-sm lg:text-lg">{getFormattedDate(time , "time" , false)}- {getFormattedDate(time, "date", false )}</p>
     </div>
   );
 };
@@ -1329,4 +1332,59 @@ const WeatherHeading = () => {
 export default WeatherHeading;
 
  ```
+ `##`  How to show dynamic icon by an function 
+## dynamic-icon
+```javascript
+
+//import icon in the component where necessary and make and use  a function like below
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import Pin from "./assets/pin.svg"
+import cloud from "./assets/cloud.svg"
+import { useContext } from "react";
+import { WeatherContext } from "./context";
+import { getFormattedDate } from "./utils/date-utils";
+import CloudIcon from "./assets/cloud.svg";
+import HazeIcon from "./assets/haze.svg";
+import RainIcon from "./assets/rainy.svg";
+import ThunderIcon from "./assets/thunder.svg";
+import SunnyIcon from "./assets/icons/sunny.svg";
+import SnowIcon from "./assets/icons/snow.svg";
+const WeatherHeading = () => {
+  const { weatherData, loading } = useContext(WeatherContext);
+  const { climate, location, temperature, time } = weatherData;
+
+  function getWeatherIcon(climate) {
+    switch (climate) {
+        case "Rain":
+            return RainIcon;
+        case "Clouds":
+            return CloudIcon;
+        case "Clear":
+            return SunnyIcon;
+        case "Snow":
+            return SnowIcon;
+        case "Thunder":
+            return ThunderIcon;
+        case "Fog":
+            return HazeIcon;
+        case "Haze":
+            return HazeIcon;
+        case "Mist":
+            return HazeIcon;
+
+        default:
+            return SunnyIcon;
+    }
+}
+  return (
+    <div>
+      <div className="max-md:flex items-center justify-between md:-mt-10">
+        <img src={getWeatherIcon(climate)} alt="cloud" />
+        {/* other code*/}
+  );
+};
+
+export default WeatherHeading;
+
 
