@@ -1387,4 +1387,4 @@ const WeatherHeading = () => {
 
 export default WeatherHeading;
 
-
+```
