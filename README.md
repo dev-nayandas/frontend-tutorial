@@ -26,6 +26,7 @@
 [How to create and use custom hook and how to use context api with React composition pattern ](#custom-hook)<br>
 [How to make utility function for formatted date](#formatted-date)<br>
 [How to show icon by a function](#dynamic-icon)<br>
+[How to add and remove something from local storage by ,custom hook,  context api and provider](#local-storage-provider-context)<br>
 
 
 
@@ -1388,3 +1389,140 @@ const WeatherHeading = () => {
 export default WeatherHeading;
 
 ```
+
+ `##`  How to add and remove something from local storage by ,custom hook,  context api and provider
+## local-storage-provider-context
+```javascript
+//create a folder at src called hooks, and make a file called useLocalStorage.js and code like below
+import { useEffect, useState } from "react"
+
+const useLocalStorage = (storageKey, defaultValue) => {
+    const [value, setValue] = useState(
+        JSON.parse(localStorage.getItem(storageKey)) ?? defaultValue);
+
+        useEffect(() => {
+            localStorage.setItem(storageKey, JSON.stringify(value));
+        }, [value, storageKey]);
+    
+    return [value, setValue];
+}
+
+export default useLocalStorage;
+
+//then create a file called index.js and code like below
+import useWeather from "./useWeather";
+import useLocalStorage from "./useLocalStorage";
+
+export {useWeather, useLocalStorage}
+
+//then create a folder at src called context and make a file called index.js and make a context like below
+import { createContext } from "react";
+
+const WeatherContext = createContext("")
+const FavouriteContext = createContext("")
+
+export { WeatherContext, FavouriteContext } 
+
+//then create a folder at src called Provider and make a file called FavouriteProvider.jsx and make a Provider  like below
+//We can extend the features like add and remove by the Provider
+import { WeatherContext } from "../context";
+import { useWeather } from "../hooks";
+import { FavouriteContext } from "../context";
+import { useLocalStorage } from "../hooks";
+
+const FavouriteProvider = ({children}) => {
+    const [ favourites, setFavourites] = useLocalStorage("favourites", [])
+
+    const addToFavorites = (latitude, longitude, location) => {
+            setFavourites(
+                [...favourites,
+                {latitude: latitude, longitude: longitude, location: location}
+                ])
+    }
+
+    const removeFromFavorites = (location)  => { 
+        const restFavorites = favourites.filter((fav) =>{
+            return fav.location !== location;
+        })
+        setFavourites(restFavorites);
+    }
+  return (
+    <FavouriteContext.Provider value={{favourites, addToFavorites, removeFromFavorites}}>
+        {children}
+    </FavouriteContext.Provider>
+  );
+};
+
+export default FavouriteProvider;
+
+
+//then create  a file at Provider folder called index.js and export the Provider like below
+import WeatherProvider from "./WeatherProvider";
+import FavouriteProvider from "./FavouriteProvider";
+
+export { WeatherProvider, FavouriteProvider}
+
+
+// then wrap the Component at higher level with the Provider like below
+import Header from "./Header";
+import WeatherBoard from "./WeatherBoard";
+import bodyBg from "../src/assets/body-bg.png";
+import { FavouriteProvider, WeatherProvider } from "./provider";
+
+const App = () => {
+  return (
+    <WeatherProvider>
+      <FavouriteProvider>
+        <div
+          className="bg-body font-[Roboto] text-light bg-no-repeat bg-cover h-screen grid place-items-center"
+          style={{ backgroundImage: `url(${bodyBg})` }}
+        >
+          <Header />
+          <WeatherBoard />
+        </div>
+      </FavouriteProvider>
+    </WeatherProvider>
+  );
+};
+
+export default App;
+
+
+//now we can add and remove item by the Provider like below. Here we used to add and remove location at localStorage
+import { useContext, useState } from "react";
+import { FavouriteContext, WeatherContext } from "./context";
+import HeartIcon from "./assets/heart.svg"
+import RedHeartIcon from "./assets/heart-red.svg"
+
+const AddToFavourite = () => {
+  const {favourites, addToFavorites, removeFromFavorites} = useContext(FavouriteContext);
+  const {weatherData} = useContext(WeatherContext)
+  const {latitude, longitude, location} = weatherData;
+  const [isFavourite, toggleFavourite] = useState(false)
+
+  const handleFavourites = () => {
+    const found  = favourites.find((fav) => fav.location === location);
+
+    if(!found){
+      addToFavorites(latitude, longitude, location);
+    } else {
+      removeFromFavorites(location)
+    }
+    toggleFavourite(!isFavourite);
+  }
+  
+  return (
+    <div className="md:col-span-2">
+      <div className="flex items-center justify-end space-x-6">
+        <button onClick={handleFavourites} className="text-sm md:text-base inline-flex items-center space-x-2 px-3 py-1.5 rounded-md bg-[#C5C5C54D]">
+          <span>Add to Favourite</span>
+          <img src={isFavourite ? RedHeartIcon : HeartIcon} alt="" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default AddToFavourite;
+```
+
