@@ -1409,11 +1409,19 @@ const useLocalStorage = (storageKey, defaultValue) => {
 
 export default useLocalStorage;
 
+
+
+
+
 //then create a file called index.js and code like below
 import useWeather from "./useWeather";
 import useLocalStorage from "./useLocalStorage";
 
 export {useWeather, useLocalStorage}
+
+
+
+
 
 //then create a folder at src called context and make a file called index.js and make a context like below
 import { createContext } from "react";
@@ -1422,6 +1430,10 @@ const WeatherContext = createContext("")
 const FavouriteContext = createContext("")
 
 export { WeatherContext, FavouriteContext } 
+
+
+
+
 
 //then create a folder at src called Provider and make a file called FavouriteProvider.jsx and make a Provider  like below
 //We can extend the features like add and remove by the Provider
@@ -1456,11 +1468,17 @@ const FavouriteProvider = ({children}) => {
 export default FavouriteProvider;
 
 
+
+
+
 //then create  a file at Provider folder called index.js and export the Provider like below
 import WeatherProvider from "./WeatherProvider";
 import FavouriteProvider from "./FavouriteProvider";
 
 export { WeatherProvider, FavouriteProvider}
+
+
+
 
 
 // then wrap the Component at higher level with the Provider like below
@@ -1486,6 +1504,9 @@ const App = () => {
 };
 
 export default App;
+
+
+
 
 
 //now we can add and remove item by the Provider like below. Here we used to add and remove location at localStorage
