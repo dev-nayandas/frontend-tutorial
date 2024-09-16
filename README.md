@@ -1510,7 +1510,7 @@ export default App;
 
 
 //now we can add and remove item by the Provider like below. Here we used to add and remove location at localStorage
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FavouriteContext, WeatherContext } from "./context";
 import HeartIcon from "./assets/heart.svg"
 import RedHeartIcon from "./assets/heart-red.svg"
@@ -1520,6 +1520,13 @@ const AddToFavourite = () => {
   const {weatherData} = useContext(WeatherContext)
   const {latitude, longitude, location} = weatherData;
   const [isFavourite, toggleFavourite] = useState(false)
+
+
+  useEffect(() => {
+    const found  = favourites.find((fav) => fav.location === location);
+      toggleFavourite(found);
+
+  } , [])
 
   const handleFavourites = () => {
     const found  = favourites.find((fav) => fav.location === location);
@@ -1531,7 +1538,7 @@ const AddToFavourite = () => {
     }
     toggleFavourite(!isFavourite);
   }
-  
+
   return (
     <div className="md:col-span-2">
       <div className="flex items-center justify-end space-x-6">
