@@ -27,7 +27,7 @@
 [How to make utility function for formatted date](#formatted-date)<br>
 [How to show icon by a function](#dynamic-icon)<br>
 [How to add and remove something from local storage by ,custom hook,  context api and provider](#local-storage-provider-context)<br>
-[Send Value to a hook ](#send-value-to-providert)<br>
+[Send Value to a hook ](#send-value-to-provider)<br>
 
 
 
