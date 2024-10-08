@@ -28,6 +28,7 @@
 [How to show icon by a function](#dynamic-icon)<br>
 [How to add and remove something from local storage by ,custom hook,  context api and provider](#local-storage-provider-context)<br>
 [Send Value to a hook ](#send-value-to-provider)<br>
+[How to use useDebounce hook ](#how-to-use-debounce)<br>
 
 
 
@@ -1701,4 +1702,60 @@ const useWeather = () => {
 }
 
 export default useWeather;
+```
+
+`##`  How to use useDebounce
+## how-to-use-debounce
+```javascript
+//make a file at hooks folder called "useDebounce"
+// make a debounce function like bellow
+import { useState, useEffect } from 'react';
+
+function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+export default useDebounce;
+
+
+
+
+// then we can use it where necessary like bellow
+import React, { useState, useEffect } from 'react';
+import useDebounce from './useDebounce';
+
+function SearchComponent() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 500); // 500ms delay
+
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      // Call your API or perform the desired action
+      console.log('Searching for:', debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm]);
+
+  return (
+    <input
+      type="text"
+      placeholder="Search..."
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+    />
+  );
+}
+
+export default SearchComponent;
 ```
