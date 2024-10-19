@@ -1767,5 +1767,5 @@ export default SearchComponent;
 
 
 `##` Fetching Data With Axios
-## axios
+## axios-data-fetching
 - [React Router Dom](https://github.com/Learn-with-Sumit/rnext/tree/5.2/src)
