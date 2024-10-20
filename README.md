@@ -31,6 +31,7 @@
 [How to use useDebounce hook ](#how-to-use-debounce)<br>
 [React Router Dom ](#react-router-dom)<br>
 [Fetching Data with axios ](#axios-data-fetching)<br>
+[Data Fetching With Axios and TansStackQuery ](#tans-stack-query-fetching-with-axios)<br>
 
 
 
@@ -1769,3 +1770,7 @@ export default SearchComponent;
 `##` Fetching Data With Axios
 ## axios-data-fetching
 - [Data Fetching With Axios](https://github.com/Learn-with-Sumit/rnext/tree/5.2/src)
+
+`##` State management with TansStackQuery and Fetching Data With Axios
+## tans-stack-query-fetching-with-axios
+- [Data Fetching With Axios and TansStackQuery](https://github.com/Learn-with-Sumit/rnext/tree/5.3/src)
