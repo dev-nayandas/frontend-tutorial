@@ -1773,4 +1773,4 @@ export default SearchComponent;
 
 `##` State management with TansStackQuery and Fetching Data With Axios
 ## tans-stack-query-fetching-with-axios
-- [Data Fetching With Axios and TansStackQuery](https://github.com/Learn-with-Sumit/rnext/tree/5.3/src)
+- [Data Fetching With Axios and TansStackQuery](https://github.com/Learn-with-Sumit/rnext/tree/5.3)
