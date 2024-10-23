@@ -32,6 +32,7 @@
 [React Router Dom ](#react-router-dom)<br>
 [Fetching Data with axios ](#axios-data-fetching)<br>
 [Data Fetching With Axios and TansStackQuery ](#tans-stack-query-fetching-with-axios)<br>
+[Suspense and Error Boundaries](#react-suspense)<br>
 
 
 
@@ -1774,3 +1775,7 @@ export default SearchComponent;
 `##` State management with TansStackQuery and Fetching Data With Axios
 ## tans-stack-query-fetching-with-axios
 - [Data Fetching With Axios and TansStackQuery](https://github.com/Learn-with-Sumit/rnext/tree/5.3)
+
+`##` Suspense and Error Boundaries
+## react-suspense
+- [Suspense and Error Boundaries](https://github.com/Learn-with-Sumit/rnext/tree/5.5)
