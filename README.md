@@ -33,6 +33,8 @@
 [Fetching Data with axios ](#axios-data-fetching)<br>
 [Data Fetching With Axios and TansStackQuery ](#tans-stack-query-fetching-with-axios)<br>
 [Suspense and Error Boundaries](#react-suspense)<br>
+[React Lazy Load](#lazy-load)<br>
+[Framer Motion](#framer-motion)<br>
 
 
 
@@ -1779,3 +1781,12 @@ export default SearchComponent;
 `##` Suspense and Error Boundaries
 ## react-suspense
 - [Suspense and Error Boundaries](https://github.com/Learn-with-Sumit/rnext/tree/5.5)
+
+
+`##` React Lazy Load
+## lazy-load
+- [React Lazy Load](https://github.com/Learn-with-Sumit/rnext/tree/5.6)
+
+`##` Framer Motion
+## framer-motion
+- [Framer Motion](https://github.com/Learn-with-Sumit/rnext/tree/5.7)
