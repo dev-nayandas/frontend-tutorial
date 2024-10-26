@@ -35,6 +35,7 @@
 [Suspense and Error Boundaries](#react-suspense)<br>
 [React Lazy Load](#lazy-load)<br>
 [Framer Motion](#framer-motion)<br>
+[Firebase Authentication](#firebase)<br>
 
 
 
@@ -1790,3 +1791,7 @@ export default SearchComponent;
 `##` Framer Motion
 ## framer-motion
 - [Framer Motion](https://github.com/Learn-with-Sumit/rnext/tree/5.7)
+
+`##` Firebase Authentication 
+## firebase
+- [Firebase Authentication](https://github.com/Learn-with-Sumit/rnext/tree/5.8)
