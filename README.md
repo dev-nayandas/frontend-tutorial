@@ -36,6 +36,7 @@
 [React Lazy Load](#lazy-load)<br>
 [Framer Motion](#framer-motion)<br>
 [Firebase Authentication](#firebase)<br>
+[React Infinite Scroll](#infinite-scroll)<br>
 
 
 
@@ -1795,3 +1796,7 @@ export default SearchComponent;
 `##` Firebase Authentication 
 ## firebase
 - [Firebase Authentication](https://github.com/Learn-with-Sumit/rnext/tree/5.8)
+
+`##` React Infinite Scroll
+## infinite-scroll
+- [React Infinite Scroll](https://github.com/Learn-with-Sumit/rnext/tree/5.8)
