@@ -38,6 +38,7 @@
 [Firebase Authentication](#firebase)<br>
 [React Infinite Scroll](#infinite-scroll)<br>
 [React Styled Component](#styled-component)<br>
+[React Virtualized](#react-virtualized)<br>
 
 
 
@@ -1805,3 +1806,7 @@ export default SearchComponent;
 `##` React Styled Component
 ## styled-component
 - [React Styled Component](https://github.com/Learn-with-Sumit/rnext/tree/5.11)
+
+`##` React Virtualized
+## react-virtualized
+- [React Virtualized](https://github.com/Learn-with-Sumit/rnext/tree/5.12)
