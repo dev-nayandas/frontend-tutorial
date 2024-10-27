@@ -1799,4 +1799,4 @@ export default SearchComponent;
 
 `##` React Infinite Scroll
 ## infinite-scroll
-- [React Infinite Scroll](https://github.com/Learn-with-Sumit/rnext/tree/5.8)
+- [React Infinite Scroll](https://github.com/Learn-with-Sumit/rnext/tree/5.9)
