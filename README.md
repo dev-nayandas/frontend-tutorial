@@ -40,6 +40,7 @@
 [React Styled Component](#styled-component)<br>
 [React Virtualized](#react-virtualized)<br>
 [React Portal](#react-portal)<br>
+[React Redux](#react-redux)<br>
 
 
 
@@ -1815,3 +1816,7 @@ export default SearchComponent;
 `##` React Portal
 ## react-portal
 - [React Portal](https://github.com/Learn-with-Sumit/rnext/tree/5.13)
+
+`##` React Redux
+## react-redux
+- [React Redux](https://github.com/Learn-with-Sumit/rnext/tree/5.14)
