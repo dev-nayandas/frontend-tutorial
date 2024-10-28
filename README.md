@@ -39,6 +39,7 @@
 [React Infinite Scroll](#infinite-scroll)<br>
 [React Styled Component](#styled-component)<br>
 [React Virtualized](#react-virtualized)<br>
+[React Portal](#react-portal)<br>
 
 
 
@@ -1810,3 +1811,7 @@ export default SearchComponent;
 `##` React Virtualized
 ## react-virtualized
 - [React Virtualized](https://github.com/Learn-with-Sumit/rnext/tree/5.12)
+
+`##` React Portal
+## react-portal
+- [React Portal](https://github.com/Learn-with-Sumit/rnext/tree/5.12)
