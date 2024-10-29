@@ -1778,7 +1778,7 @@ export default SearchComponent;
 
 `##` React Hook Form
 ## react-hook-form
-- [React Router Dom](https://github.com/Learn-with-Sumit/rnext/tree/5.4)
+- [React Hook Form](https://github.com/Learn-with-Sumit/rnext/tree/5.4)
 
 
 `##` Fetching Data With Axios
