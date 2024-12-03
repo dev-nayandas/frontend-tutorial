@@ -42,6 +42,7 @@
 [React Virtualized](#react-virtualized)<br>
 [React Portal](#react-portal)<br>
 [React Redux](#react-redux)<br>
+[Tailwind Custom Class add](#tailwind-custom-class)<br>
 
 
 
@@ -1825,3 +1826,8 @@ export default SearchComponent;
 `##` React Redux
 ## react-redux
 - [React Redux](https://github.com/Learn-with-Sumit/rnext/tree/5.14)
+
+`##` Tailwind Custom Class
+## tailwind-custom-class
+- [Tailwind Custom Class index.css](https://github.com/Learn-with-Sumit/rnext/blob/5.15/src/index.css)
+- [Tailwind Custom Class tailwind.config](https://github.com/Learn-with-Sumit/rnext/blob/5.15/tailwind.config.js)
