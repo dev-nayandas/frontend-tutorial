@@ -44,6 +44,8 @@
 [React Redux](#react-redux)<br>
 [Tailwind Custom Class add](#tailwind-custom-class)<br>
 [Private Route](#private-route)<br>
+[Store User Data By API Call](#store-data-by-api-call)<br>
+[JWT Implementation](#jwt-implementation)<br>
 
 
 
@@ -1838,3 +1840,14 @@ export default SearchComponent;
 - [PrivateRoutes at routes folder](https://github.com/Learn-with-Sumit/rnext/blob/5.17/src/routes/PrivateRoutes.jsx)
 - [Wrap Routes which are private](https://github.com/Learn-with-Sumit/rnext/blob/5.17/src/App.jsx)
 - [Make auth empty at Logout component](https://github.com/Learn-with-Sumit/rnext/blob/5.17/src/components/auth/Logout.jsx)
+
+
+`##` Store user info at state by api call
+## store-data-by-api-call
+- [Store User Data By API Call](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/components/auth/LoginForm.jsx)
+
+`##` JWT Implementation
+## jwt-implementation
+- [Create a wrapper of axios api folder](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/api/index.js)
+- [Create a useAxios Hook](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/hooks/useAxios.js)
+- [Example of use: Make a call using this api from useAxios to get profile](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/pages/ProfilePage.jsx)
