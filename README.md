@@ -43,6 +43,7 @@
 [React Portal](#react-portal)<br>
 [React Redux](#react-redux)<br>
 [Tailwind Custom Class add](#tailwind-custom-class)<br>
+[Private Route](#private-route)<br>
 
 
 
@@ -1831,3 +1832,9 @@ export default SearchComponent;
 ## tailwind-custom-class
 - [Tailwind Custom Class index.css](https://github.com/Learn-with-Sumit/rnext/blob/5.15/src/index.css)
 - [Tailwind Custom Class tailwind.config](https://github.com/Learn-with-Sumit/rnext/blob/5.15/tailwind.config.js)
+
+`##` Private Route
+## private-route
+- [PrivateRoutes at routes folder](https://github.com/Learn-with-Sumit/rnext/blob/5.17/src/routes/PrivateRoutes.jsx)
+- [Wrap Routes which are private](https://github.com/Learn-with-Sumit/rnext/blob/5.17/src/App.jsx)
+- [Make auth empty at Logout component](https://github.com/Learn-with-Sumit/rnext/blob/5.17/src/components/auth/Logout.jsx)
