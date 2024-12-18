@@ -46,6 +46,8 @@
 [Private Route](#private-route)<br>
 [Store User Data By API Call](#store-data-by-api-call)<br>
 [JWT Implementation](#jwt-implementation)<br>
+[Use Reducer Advanced](#useReducer-advanced)<br>
+[Multipart Image Upload](#multipart-image-upload)<br>
 
 
 
@@ -1851,3 +1853,18 @@ export default SearchComponent;
 - [Create a wrapper of axios api folder](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/api/index.js)
 - [Create a useAxios Hook](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/hooks/useAxios.js)
 - [Example of use: Make a call using this api from useAxios to get profile](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/pages/ProfilePage.jsx)
+
+
+`##` Use Reducer Advanced
+## useReducer-advanced
+- [Actions In Another file](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/actions/index.js)
+- [Create the Reducer](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/reducers/ProfileReducer.js)
+- [Make a context](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/context/index.js)
+- [Make a provider](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/providers/ProfileProvider.jsx)
+- [Make a hook](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/hooks/useProfile.js)
+- [Use it where need](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/pages/ProfilePage.jsx)
+- [Another use case at Change Bio ](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/components/profile/Bio.jsx)
+
+`##` Use Reducer Advanced
+## multipart-image-upload
+- [Multipart Image Upload ](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/components/profile/ProfileImage.jsx)
