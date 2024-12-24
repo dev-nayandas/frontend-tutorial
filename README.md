@@ -51,6 +51,7 @@
 [How to make reuseable components](#reuseable-components)<br>
 [Get Difference from now utility function](#get-difference-from-now )<br>
 [Check the avatar of mine or others](#check-isme-avatar )<br>
+[New User Registration](#new-user-registration)<br>
 
 
 
@@ -1874,7 +1875,8 @@ export default SearchComponent;
 
 `##` How to make reuseable components
 ## reuseable-components
-- [Reuseable Reuseable ](https://github.com/Learn-with-Sumit/rnext/blob/5.20/src/components/profile/MyPosts.jsx)
+- [Reuseable components in For Profile ](https://github.com/Learn-with-Sumit/rnext/blob/5.20/src/components/profile/MyPosts.jsx)
+- [Reuseable components in For Home ](https://github.com/Learn-with-Sumit/rnext/blob/5.21/src/pages/HomePage.jsx)
 
 `##` Get Difference from now utility function
 ## get-difference-from-now 
@@ -1883,3 +1885,7 @@ export default SearchComponent;
 `##` Check the avatar of mine or others
 ## check-isme-avatar
 - [Check the avatar of mine or others ](https://github.com/Learn-with-Sumit/rnext/blob/5.20/src/hooks/useAvatar.js)
+
+`##` New User Registration
+## new-user-registration
+- [New User Registration](https://github.com/Learn-with-Sumit/rnext/blob/5.22/src/components/auth/RegistrationForm.jsx)
