@@ -1872,4 +1872,4 @@ export default SearchComponent;
 
 `##` How to make reuseable components
 ## reuseable-components
-- [Reuseable Reuseable ](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/components/profile/ProfileImage.jsx)
+- [Reuseable Reuseable ](https://github.com/Learn-with-Sumit/rnext/blob/5.20/src/components/profile/MyPosts.jsx)
