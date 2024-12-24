@@ -49,6 +49,7 @@
 [Use Reducer Advanced](#useReducer-advanced)<br>
 [Multipart Image Upload](#multipart-image-upload)<br>
 [How to make reuseable components](#reuseable-components)<br>
+[Get Difference from now utility function](#get-difference-from-now )<br>
 
 
 
@@ -1873,3 +1874,7 @@ export default SearchComponent;
 `##` How to make reuseable components
 ## reuseable-components
 - [Reuseable Reuseable ](https://github.com/Learn-with-Sumit/rnext/blob/5.20/src/components/profile/MyPosts.jsx)
+
+`##` Get Difference from now utility function
+## get-difference-from-now 
+- [Get Difference from now utility function ](https://github.com/Learn-with-Sumit/rnext/blob/5.20/src/utils/index.js)
