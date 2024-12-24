@@ -48,6 +48,7 @@
 [JWT Implementation](#jwt-implementation)<br>
 [Use Reducer Advanced](#useReducer-advanced)<br>
 [Multipart Image Upload](#multipart-image-upload)<br>
+[How to make reuseable components](#reuseable-components)<br>
 
 
 
@@ -1868,3 +1869,7 @@ export default SearchComponent;
 `##` Use Reducer Advanced
 ## multipart-image-upload
 - [Multipart Image Upload ](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/components/profile/ProfileImage.jsx)
+
+`##` How to make reuseable components
+## reuseable-components
+- [Reuseable Reuseable ](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/components/profile/ProfileImage.jsx)
