@@ -54,7 +54,8 @@
 [New User Registration](#new-user-registration)<br>
 [Implement Like with api call](#implement-like-with-api)<br>
 [Implement Comments with api call](#implement-comments-with-api)<br>
-[Implement Delete with api call](#iimplement-add-with-api)<br>
+[Implement Delete with api call](#implement-delete-with-api)<br>
+[Implement Create with api call](#implement-create-with-api)<br>
 
 
 
@@ -1907,5 +1908,5 @@ export default SearchComponent;
 - [Implement Delete  with api call](https://github.com/Learn-with-Sumit/rnext/blob/5.24/src/components/posts/PostHeader.jsx)
 
 `##` Implement create with api call
-## implement-add-with-api
+## implement-create-with-api
 - [Implement create  with api call](https://github.com/Learn-with-Sumit/rnext/blob/5.24/src/components/posts/PostEntry.jsx)
