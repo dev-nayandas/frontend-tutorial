@@ -56,6 +56,8 @@
 [Implement Comments with api call](#implement-comments-with-api)<br>
 [Implement Delete with api call](#implement-delete-with-api)<br>
 [Implement Create with api call](#implement-create-with-api)<br>
+[Next Js Installation](#nextjs-installation)<br>
+[Next Js Basic Setup in Installation Time](#nextjs-basic-setup)<br>
 
 
 
@@ -1910,3 +1912,15 @@ export default SearchComponent;
 `##` Implement create with api call
 ## implement-create-with-api
 - [Implement create  with api call](https://github.com/Learn-with-Sumit/rnext/blob/5.24/src/components/posts/PostEntry.jsx)
+
+`##` Next js Installation
+## nextjs-installation
+
+```javascript
+npx create-next-app@latest
+```
+
+`##` Next js Basic Setup in Installation time
+## nextjs-basic-setup
+
+- [Next js Basic Setup in Installation time](https://prnt.sc/Ga4NfPbGUk4a)
