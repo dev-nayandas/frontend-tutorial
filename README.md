@@ -60,6 +60,8 @@
 [Next Js Basic Setup in Installation Time](#nextjs-basic-setup)<br>
 [How to make custom link so that it become a cline component](#custom-link)<br>
 [How to make custom Programmatically navigate](#programmatically-naviagte)<br>
+[How to set meta data](#set-meta-data)<br>
+[How to get active link](#get-active-link)<br>
 
 
 
@@ -1938,3 +1940,13 @@ npx create-next-app@latest
 
 - [Component Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/Button.js)
 - [Uses Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/dashboard/settings/page.js)
+
+`##` How to set meta data
+## set-meta-data
+
+- [Set Meta Data like this](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/dashboard/analytics/page.js)
+
+`##` How to get active link
+## get-active-link
+
+- [How to get active link](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/CustomLink.js)
