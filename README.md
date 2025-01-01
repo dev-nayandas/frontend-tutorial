@@ -62,6 +62,7 @@
 [How to make custom Programmatically navigate](#programmatically-naviagte)<br>
 [How to set meta data](#set-meta-data)<br>
 [How to get active link](#get-active-link)<br>
+[How to get search params](#get-search-params)<br>
 
 
 
@@ -1950,3 +1951,9 @@ npx create-next-app@latest
 ## get-active-link
 
 - [How to get active link](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/CustomLink.js)
+
+`##` How to get search params
+## get-search-params
+
+- [How to get search  params](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/SortProducts.js)
+- [Uses](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/dashboard/settings/page.js)
