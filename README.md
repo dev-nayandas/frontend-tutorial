@@ -59,6 +59,7 @@
 [Next Js Installation](#nextjs-installation)<br>
 [Next Js Basic Setup in Installation Time](#nextjs-basic-setup)<br>
 [How to make custom link so that it become a cline component](#custom-link)<br>
+[How to make custom Programmatically navigate](#programmatically-naviagte)<br>
 
 
 
@@ -1931,3 +1932,9 @@ npx create-next-app@latest
 
 - [Component Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/CustomLink.js)
 - [Uses Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/layout.js)
+
+`##` How to make custom Programmatically navigate
+## programmatically-naviagte
+
+- [Component Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/Button.js)
+- [Uses Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/dashboard/settings/page.js)
