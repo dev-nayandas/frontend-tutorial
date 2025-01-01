@@ -58,6 +58,7 @@
 [Implement Create with api call](#implement-create-with-api)<br>
 [Next Js Installation](#nextjs-installation)<br>
 [Next Js Basic Setup in Installation Time](#nextjs-basic-setup)<br>
+[How to make custom link so that it become a cline component](#custom-link)<br>
 
 
 
@@ -1924,3 +1925,9 @@ npx create-next-app@latest
 ## nextjs-basic-setup
 
 - [Next js Basic Setup in Installation time](https://prnt.sc/Ga4NfPbGUk4a)
+
+`##` How to make custom link so that it become a client component
+## custom-link
+
+- [Component Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/CustomLink.js)
+- [Uses Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/layout.js)
