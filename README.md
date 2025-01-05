@@ -64,6 +64,8 @@
 [How to get active link](#get-active-link)<br>
 [How to get search params](#get-search-params)<br>
 [Add Loading at Next js](#add-loading-at-nextjs)<br>
+[How to add Route group](#add-route-group)<br>
+[How to add more than one RootLayout](#add-more-than-one-root-layout)<br>
 
 
 
@@ -1970,3 +1972,32 @@ npx create-next-app@latest
 
 - [Add a error page at Component Boundary](https://github.com/Learn-with-Sumit/rnext/blob/7.8/app/dashboard/error.js)
 - [Now it can catch server component and Client Component error](https://github.com/Learn-with-Sumit/rnext/blob/7.8/app/dashboard/analytics/page.js)
+
+`##` Route Group
+## add-route-group
+
+- [How to add a route group](https://github.com/Learn-with-Sumit/rnext/tree/7.7/app/heavy)
+
+`##` How to add More than one RootLayout
+## add-more-than-one-root-layout
+
+```javascript
+In Next.js, you can use more than one Root Layouts by taking advantage of Route Groups and the layout.js file. Each layout.js file defines a layout for a specific segment or section of your application. By strategically organizing your app directory, you can create and apply multiple layouts for different parts of your app.
+
+app/
+├── (admin)/
+│   ├── layout.js         // Layout for the "admin" section
+│   ├── dashboard/
+│   │   └── page.js       // /dashboard
+│   ├── settings/
+│       └── page.js       // /settings
+├── (marketing)/
+│   ├── layout.js         // Layout for the "marketing" section
+│   ├── home/
+│   │   └── page.js       // /home
+│   ├── about/
+│       └── page.js       // /about
+├── layout.js             // Global Root Layout
+└── page.js               // Home page (root URL /)
+
+```
