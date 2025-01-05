@@ -63,6 +63,7 @@
 [How to set meta data](#set-meta-data)<br>
 [How to get active link](#get-active-link)<br>
 [How to get search params](#get-search-params)<br>
+[Add Loading at Next js](#add-loading-at-nextjs)<br>
 
 
 
@@ -1957,3 +1958,15 @@ npx create-next-app@latest
 
 - [How to get search  params](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/SortProducts.js)
 - [Uses](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/dashboard/settings/page.js)
+
+`##` Add loading at nextjs
+## add-loading-at-nextjs
+
+- [Add loading at nextjs](https://github.com/Learn-with-Sumit/rnext/tree/7.7/app/heavy)
+- [Custom Loading state to part](https://github.com/Learn-with-Sumit/rnext/blob/7.7/app/heavy/page.js)
+
+`##` Show Error In Next js
+## show-errors-at-nextjs
+
+- [Add a error page at Component Boundary](https://github.com/Learn-with-Sumit/rnext/blob/7.8/app/dashboard/error.js)
+- [Now it can catch server component and Client Component error](https://github.com/Learn-with-Sumit/rnext/blob/7.8/app/dashboard/analytics/page.js)
