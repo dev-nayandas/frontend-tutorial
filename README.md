@@ -68,6 +68,7 @@
 [How to add more than one RootLayout](#add-more-than-one-root-layout)<br>
 [How to add dynamic routes](#dynamic-routes)<br>
 [How to get ReadMe files content](#readme-file-content)<br>
+[How to filter for pathname](#filter-for-pathname)<br>
 
 
 
@@ -2013,4 +2014,8 @@ app/
 ## readme-file-content
 
 - [How to get ReadMe files content](https://github.com/Learn-with-Sumit/rnext/blob/7.11/docucraft/lib/doc.js)
-- [How to add dynamic routes -child page](https://github.com/Learn-with-Sumit/rnext/blob/7.10/app/blogs/%5Bid%5D/page.js)
+
+`##` How to filter for pathname
+## filter-for-pathname
+
+- [How to filter for pathname](https://github.com/Learn-with-Sumit/rnext/blob/7.12/docucraft/components/Sidebar.jsx)
