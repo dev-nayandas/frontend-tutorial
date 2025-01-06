@@ -67,6 +67,7 @@
 [How to add Route group](#add-route-group)<br>
 [How to add more than one RootLayout](#add-more-than-one-root-layout)<br>
 [How to add dynamic routes](#dynamic-routes)<br>
+[How to get ReadMe files content](#readme-file-content)<br>
 
 
 
@@ -2006,4 +2007,10 @@ app/
 ## dynamic-routes
 
 - [How to add dynamic routes -main page](https://github.com/Learn-with-Sumit/rnext/blob/7.10/app/blogs/page.js)
+- [How to add dynamic routes -child page](https://github.com/Learn-with-Sumit/rnext/blob/7.10/app/blogs/%5Bid%5D/page.js)
+
+`##` How to get ReadMe files content
+## readme-file-content
+
+- [How to get ReadMe files content](https://github.com/Learn-with-Sumit/rnext/blob/7.11/docucraft/lib/doc.js)
 - [How to add dynamic routes -child page](https://github.com/Learn-with-Sumit/rnext/blob/7.10/app/blogs/%5Bid%5D/page.js)
