@@ -69,6 +69,7 @@
 [How to add dynamic routes](#dynamic-routes)<br>
 [How to get ReadMe files content](#readme-file-content)<br>
 [How to filter for pathname](#filter-for-pathname)<br>
+[DocuCraft full Resource](#docucraft-full-Resource)<br>
 
 
 
@@ -2019,3 +2020,8 @@ app/
 ## filter-for-pathname
 
 - [How to filter for pathname](https://github.com/Learn-with-Sumit/rnext/blob/7.12/docucraft/components/Sidebar.jsx)
+
+`##` DocuCraft full Resource
+## docucraft-full-Resource
+
+- [DocuCraft full Resource](https://github.com/Learn-with-Sumit/rnext/tree/7.13/docucraft)
