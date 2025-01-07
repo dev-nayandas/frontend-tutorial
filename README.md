@@ -70,6 +70,7 @@
 [How to get ReadMe files content](#readme-file-content)<br>
 [How to filter for pathname](#filter-for-pathname)<br>
 [DocuCraft full Resource](#docucraft-full-Resource)<br>
+[Implement Search In advanced way](#implement-search-advanced-way)<br>
 
 
 
@@ -2025,3 +2026,10 @@ app/
 ## docucraft-full-Resource
 
 - [DocuCraft full Resource](https://github.com/Learn-with-Sumit/rnext/tree/7.13/docucraft)
+
+`##` Implement Search In advanced way
+## implement-search-advanced-way
+
+Here need to check how onClick is implemented for Link specially in closeSearchResults function at Search Component (Most Important)
+- [Implement Search In advanced way-Search Component](https://github.com/Learn-with-Sumit/rnext/blob/7.13/docucraft/components/Search.jsx)
+- [Implement Search In advanced way-Search Result Component](https://github.com/Learn-with-Sumit/rnext/blob/7.13/docucraft/components/SearchResult.jsx)
