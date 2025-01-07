@@ -71,6 +71,7 @@
 [How to filter for pathname](#filter-for-pathname)<br>
 [DocuCraft full Resource](#docucraft-full-Resource)<br>
 [Implement Search In advanced way](#implement-search-advanced-way)<br>
+[Error handling at real life project](#error-handling-at-real-project)<br>
 
 
 
@@ -1973,7 +1974,9 @@ npx create-next-app@latest
 - [Custom Loading state to part](https://github.com/Learn-with-Sumit/rnext/blob/7.7/app/heavy/page.js)
 
 `##` Show Error In Next js
-## show-errors-at-nextjs
+ ## show-errors-at-nextjs
+
+ Error Comments must be a client component
 
 - [Add a error page at Component Boundary](https://github.com/Learn-with-Sumit/rnext/blob/7.8/app/dashboard/error.js)
 - [Now it can catch server component and Client Component error](https://github.com/Learn-with-Sumit/rnext/blob/7.8/app/dashboard/analytics/page.js)
@@ -1981,7 +1984,7 @@ npx create-next-app@latest
 `##` Route Group
 ## add-route-group
 
-- [How to add a route group](https://github.com/Learn-with-Sumit/rnext/tree/7.7/app/heavy)
+- [How to add a route group](https://github.com/Learn-with-Sumit/rnext/tree/7.9/app/(dashboard))
 
 `##` How to add More than one RootLayout
 ## add-more-than-one-root-layout
@@ -2033,3 +2036,8 @@ app/
 Here need to check how onClick is implemented for Link specially in closeSearchResults function at Search Component (Most Important)
 - [Implement Search In advanced way-Search Component](https://github.com/Learn-with-Sumit/rnext/blob/7.13/docucraft/components/Search.jsx)
 - [Implement Search In advanced way-Search Result Component](https://github.com/Learn-with-Sumit/rnext/blob/7.13/docucraft/components/SearchResult.jsx)
+
+`##` Error handling at real life project
+## error-handling-at-real-project
+
+- [Error handling at real life project](https://github.com/Learn-with-Sumit/rnext/blob/7.13/docucraft/app/layout.js)
