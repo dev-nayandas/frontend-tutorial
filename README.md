@@ -75,6 +75,7 @@
 [Parallel Routes ](#parallel-routes)<br>
 [Unmatched and intercepting routes ](#unmatched-and-intercepting-routes)<br>
 [Parallel, unmatched and Intercepting Routes combination](#parallel-and-intercepting-routes-combination)<br>
+[Route Handlers(CRUD)](#route-handlers)<br>
 
 
 
@@ -2059,3 +2060,8 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## parallel-and-intercepting-routes-combination
 
 - [Parallel, unmatched and Intercepting Routes combination](https://github.com/Learn-with-Sumit/rnext/tree/8.4)
+
+`##` Route Handlers(CRUD)
+## route-handlers
+
+- [ Route Handlers(CRUD)](https://github.com/Learn-with-Sumit/rnext/tree/8.5)
