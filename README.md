@@ -77,6 +77,7 @@
 [Parallel, unmatched and Intercepting Routes combination](#parallel-and-intercepting-routes-combination)<br>
 [Route Handlers(CRUD)](#route-handlers)<br>
 [Route Handlers(Search Params, cookies, caching , Redirecting)](#search-params-cookies-caching-redirecting)<br>
+[Middleware)](#middleware)<br>
 
 
 
@@ -2071,3 +2072,8 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## search-params-cookies-caching-redirecting
 
 - [ Route Handlers(Search Params, cookies, caching, Redirecting)](https://github.com/Learn-with-Sumit/rnext/tree/8.6)
+
+`##` Middleware
+## middleware
+
+- [ Middleware)](https://github.com/Learn-with-Sumit/rnext/tree/8.7)
