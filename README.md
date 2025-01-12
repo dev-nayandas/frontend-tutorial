@@ -79,6 +79,7 @@
 [Route Handlers(Search Params, cookies, caching , Redirecting)](#search-params-cookies-caching-redirecting)<br>
 [Middleware)](#middleware)<br>
 [Next Js Not Found Page )](#next-js-not-found-page)<br>
+[Internalization )](#internalization)<br>
 
 
 
@@ -2083,3 +2084,8 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## next-js-not-found-page
 
 - [ Next Js Not Found Page )](https://github.com/Learn-with-Sumit/rnext/tree/8.8)
+
+`##` Internalization
+## internalization
+
+- [ Internalization )](https://github.com/Learn-with-Sumit/rnext/tree/8.9)
