@@ -72,6 +72,9 @@
 [DocuCraft full Resource](#docucraft-full-Resource)<br>
 [Implement Search In advanced way](#implement-search-advanced-way)<br>
 [Error handling at real life project](#error-handling-at-real-project)<br>
+[Parallel Routes ](#parallel-routes)<br>
+[Unmatched and intercepting routes ](#unmatched-and-intercepting-routes)<br>
+[Parallel, unmatched and Intercepting Routes combination](#parallel-and-intercepting-routes-combination)<br>
 
 
 
@@ -2041,3 +2044,18 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## error-handling-at-real-project
 
 - [Error handling at real life project](https://github.com/Learn-with-Sumit/rnext/blob/7.13/docucraft/app/layout.js)
+
+`##` Parallel Routes
+## parallel-routes
+
+- [Parallel Routes](https://github.com/Learn-with-Sumit/rnext/tree/8.2)
+
+`##` Unmatched and intercepting routes
+## unmatched-and-intercepting-routes
+
+- [Unmatched and intercepting routes](https://github.com/Learn-with-Sumit/rnext/tree/8.3)
+
+`##` Parallel, unmatched and Intercepting Routes combination
+## parallel-and-intercepting-routes-combination
+
+- [Parallel, unmatched and Intercepting Routes combination](https://github.com/Learn-with-Sumit/rnext/tree/8.4)
