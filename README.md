@@ -80,6 +80,8 @@
 [Middleware)](#middleware)<br>
 [Next Js Not Found Page )](#next-js-not-found-page)<br>
 [Internalization )](#internalization)<br>
+[Basic Setup of photo feed )](#basic-photo-feed)<br>
+[Api creation in next js )](#api-creation-in-next-js)<br>
 
 
 
@@ -2089,3 +2091,13 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## internalization
 
 - [ Internalization )](https://github.com/Learn-with-Sumit/rnext/tree/8.9)
+
+`##` Basic Setup of photo feed
+## basic-photo-feed
+
+- [ Basic Setup of photo feed )](https://github.com/Learn-with-Sumit/rnext/tree/8.10)
+
+`##` Api creation in next js
+## api-creation-in-next-js
+
+- [ Api creation in next js )](https://github.com/Learn-with-Sumit/rnext/tree/8.11)
