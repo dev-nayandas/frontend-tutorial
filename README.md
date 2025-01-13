@@ -77,11 +77,11 @@
 [Parallel, unmatched and Intercepting Routes combination](#parallel-and-intercepting-routes-combination)<br>
 [Route Handlers(CRUD)](#route-handlers)<br>
 [Route Handlers(Search Params, cookies, caching , Redirecting)](#search-params-cookies-caching-redirecting)<br>
-[Middleware)](#middleware)<br>
-[Next Js Not Found Page )](#next-js-not-found-page)<br>
-[Internalization )](#internalization)<br>
-[Basic Setup of photo feed )](#basic-photo-feed)<br>
-[Api creation in next js )](#api-creation-in-next-js)<br>
+[Middleware](#middleware)<br>
+[Next Js Not Found Page](#next-js-not-found-page)<br>
+[Internalization](#internalization)<br>
+[Basic Setup of photo feed](#basic-photo-feed)<br>
+[Api creation in next js](#api-creation-in-next-js)<br>
 
 
 
