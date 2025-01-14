@@ -83,6 +83,7 @@
 [Basic Setup of photo feed](#basic-photo-feed)<br>
 [Api creation in next js](#api-creation-in-next-js)<br>
 [Internalization Implementation in photo feed](#internalization-at-photo-feed)<br>
+[Full code of photo feed](#full-code-of-photo-feed)<br>
 
 
 
@@ -2107,3 +2108,8 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## internalization-at-photo-feed
 
 - [ Internalization Implementation in photo feed](https://github.com/Learn-with-Sumit/rnext/tree/8.12)
+
+`##` Full code of photo feed
+## full-code-of-photo-feed
+
+- [ Full code of photo feed](https://github.com/Learn-with-Sumit/rnext/tree/8.14)
