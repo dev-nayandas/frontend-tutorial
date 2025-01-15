@@ -84,6 +84,7 @@
 [Api creation in next js](#api-creation-in-next-js)<br>
 [Internalization Implementation in photo feed](#internalization-at-photo-feed)<br>
 [Full code of photo feed](#full-code-of-photo-feed)<br>
+[How to import data Dynamically](#import-data-dynamically)<br>
 
 
 
@@ -2113,3 +2114,8 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## full-code-of-photo-feed
 
 - [ Full code of photo feed](https://github.com/Learn-with-Sumit/rnext/tree/8.14)
+
+`##` How to import data Dynamically
+## import-data-dynamically
+
+- [How to import data Dynamically](https://github.com/Learn-with-Sumit/rnext/blob/8.14/photofeed/app/%5Blang%5D/disctionaries.js)
