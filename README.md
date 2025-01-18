@@ -85,6 +85,7 @@
 [Internalization Implementation in photo feed](#internalization-at-photo-feed)<br>
 [Full code of photo feed](#full-code-of-photo-feed)<br>
 [How to import data Dynamically](#import-data-dynamically)<br>
+[Data fetching, caching, and revalidating techniques in Next.js](#fetching-catching-revalidation)<br>
 
 
 
@@ -2119,3 +2120,8 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## import-data-dynamically
 
 - [How to import data Dynamically](https://github.com/Learn-with-Sumit/rnext/blob/8.14/photofeed/app/%5Blang%5D/disctionaries.js)
+
+`##` Data fetching, caching, and revalidating techniques in Next.js
+## fetching-catching-revalidation
+
+- [Data fetching, caching, and revalidating techniques in Next.js](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
