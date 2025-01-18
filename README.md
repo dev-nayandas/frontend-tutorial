@@ -2125,3 +2125,4 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## fetching-catching-revalidation
 
 - [Data fetching, caching, and revalidating techniques in Next.js](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
+- [ Data Fetching - on the server & client with third-party libraries & route handlers](https://github.com/Learn-with-Sumit/rnext/tree/9.2)
