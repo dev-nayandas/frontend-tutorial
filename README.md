@@ -86,6 +86,7 @@
 [Full code of photo feed](#full-code-of-photo-feed)<br>
 [How to import data Dynamically](#import-data-dynamically)<br>
 [Data fetching, caching, and revalidating techniques in Next.js](#fetching-catching-revalidation)<br>
+[ Server Action - Introduction & Example with MongoDB Database](#server-action-with-mongodb)<br>
 
 
 
@@ -2126,3 +2127,8 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 
 - [Data fetching, caching, and revalidating techniques in Next.js](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
 - [ Data Fetching - on the server & client with third-party libraries & route handlers](https://github.com/Learn-with-Sumit/rnext/tree/9.2)
+
+`##`  Server Action - Introduction & Example with MongoDB Database
+## server-action-with-mongodb
+
+- [ Server Action - Introduction & Example with MongoDB Database](https://github.com/Learn-with-Sumit/rnext/tree/9.3)
