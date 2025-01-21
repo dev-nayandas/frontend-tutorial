@@ -88,6 +88,7 @@
 [Data fetching, caching, and revalidating techniques in Next.js](#fetching-catching-revalidation)<br>
 [ Server Action - Introduction & Example with MongoDB Database](#server-action-with-mongodb)<br>
 [Data Fetching Patterns and Best Practices - Sequential & Parallel Data Fetching & Progressive Rendering ](#sequential-parallel-progressive-rendering)<br>
+[Full Next Weather Dashboard ](#weather-dashboard)<br>
 
 
 
@@ -2133,8 +2134,15 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 ## server-action-with-mongodb
 
 - [ Server Action - Introduction & Example with MongoDB Database](https://github.com/Learn-with-Sumit/rnext/tree/9.3)
+- [More Server Action - Introduction & Example with MongoDB Database](https://github.com/Learn-with-Sumit/rnext/tree/9.4)
 
 `##`  Data Fetching Patterns and Best Practices - Sequential & Parallel Data Fetching & Progressive Rendering 
 ## sequential-parallel-progressive-rendering
 
 - [Data Fetching Patterns and Best Practices - Sequential & Parallel Data Fetching & Progressive Rendering ](https://github.com/Learn-with-Sumit/rnext/tree/9.5)
+
+
+`##`  Full Next Weather Dashboard
+## weather-dashboard
+
+- [Full Next Weather Dashboard](https://github.com/Learn-with-Sumit/rnext/tree/9.12)
