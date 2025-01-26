@@ -97,6 +97,8 @@
 [De-Duplication ](#de-duplication)<br>
 [Caching and Revalidation with Axios](#axios-caching-revalidation)<br>
 [Static Dynamic Hybrid ISR Rendering](#static-dynamic-hybrid-isr-rendering)<br>
+[RSC Rendering](#rsc-rendering)<br>
+[Composition Pattern rendering ](#composition-pattern)<br>
 
 `##` Make a project
 
@@ -2477,3 +2479,7 @@ export default async function Home() {
   In Client Component we can keep Child components as children or send as props  but can not import child components
   But we can import client components in server component
 - [RSC Rendering](https://github.com/Learn-with-Sumit/rnext/tree/10.2)
+
+`##` Composition Pattern rendering 
+## composition-pattern
+- [Composition Pattern rendering ](https://github.com/Learn-with-Sumit/rnext/tree/10.3)
