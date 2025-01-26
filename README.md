@@ -91,6 +91,7 @@
 [Full Next Weather Dashboard ](#weather-dashboard)<br>
 [Data fetching in the server with fetch ](#data-fetching-in-server)<br>
 [Data fetching in the server with fetch at route handler ](#data-fetching-in-server-route-handler)<br>
+[Another way to prevent caching ](#another-way-to-prevent-caching)<br>
 
 `##` Make a project
 
@@ -2313,5 +2314,25 @@ export async function GET(request) {
   const posts = await getJoke();
 
   return Response.json(posts);
+}
+```
+`##` Another way to prevent caching
+## another-way-to-prevent-caching
+
+- [Another way to prevent caching](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
+
+```javascript
+// Another way to prevent caching
+
+export default async function getJoke() {
+    const res = await fetch("https://api.chucknorris.io/jokes/random", {
+        cache: 'no-store'
+    });
+
+    if (!res.ok) {
+        throw new Error("Fetch error...");
+    }
+
+    return res.json();
 }
 ```
