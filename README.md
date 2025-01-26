@@ -90,6 +90,7 @@
 [Data Fetching Patterns and Best Practices - Sequential & Parallel Data Fetching & Progressive Rendering ](#sequential-parallel-progressive-rendering)<br>
 [Full Next Weather Dashboard ](#weather-dashboard)<br>
 [Data fetching in the server with fetch ](#data-fetching-in-server)<br>
+[Data fetching in the server with fetch at route handler ](#data-fetching-in-server-route-handler)<br>
 
 `##` Make a project
 
@@ -2270,7 +2271,8 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 `##` Data fetching in the server with fetch
 
 ## data-fetching-in-server
-- [Data fetching in the server with fetch](https://github.com/Learn-with-Sumit/rnext/tree/9.12)
+
+- [Data fetching in the server with fetch](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
 
 ```javascript
 // Good to know know:
@@ -2278,7 +2280,7 @@ Here need to check how onClick is implemented for Link specially in closeSearchR
 // To prevent it we need to use cookies like bellow
 import getJoke from "@/utils/getJoke";
 import RandJoke from "./components/RandomJoke";
-import {cookies} from "next/headers";
+import { cookies } from "next/headers";
 
 export default async function Home() {
   const theme = cookies().get("theme");
@@ -2290,5 +2292,26 @@ export default async function Home() {
       <RandJoke />
     </main>
   );
+}
+```
+
+`##` Data fetching in the server with fetch at route handler
+
+## data-fetching-in-server-route-handler
+
+- [Data fetching in the server with fetch at route handler](https://github.com/Learn-with-Sumit/rnext/blob/9.1/app/api/posts/route.js)
+
+```javascript
+// Good to know know:
+// get Request in Next is by default cached.
+// To prevent cached  we need to use export const dynamic = "force-dynamic"; like bellow
+import getJoke from "@/utils/getJoke";
+
+export const dynamic = "force-dynamic";
+
+export async function GET(request) {
+  const posts = await getJoke();
+
+  return Response.json(posts);
 }
 ```
