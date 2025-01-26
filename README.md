@@ -86,7 +86,7 @@
 [Full code of photo feed](#full-code-of-photo-feed)<br>
 [How to import data Dynamically](#import-data-dynamically)<br>
 [Data fetching, caching, and revalidating techniques in Next.js](#fetching-catching-revalidation)<br>
-[ Server Action - Introduction & Example with MongoDB Database](#server-action-with-mongodb)<br>
+[Server Action - Introduction & Example with MongoDB Database](#server-action-with-mongodb)<br>
 [Data Fetching Patterns and Best Practices - Sequential & Parallel Data Fetching & Progressive Rendering ](#sequential-parallel-progressive-rendering)<br>
 [Full Next Weather Dashboard ](#weather-dashboard)<br>
 [Data fetching in the server with fetch ](#data-fetching-in-server)<br>
@@ -95,6 +95,7 @@
 [We can Revalidate the fetching ](#revalidating-fetching)<br>
 [Revalidation all fetch requests in a page and its child ](#revalidating-fetching-for-a-page-and-child)<br>
 [De-Duplication ](#de-duplication)<br>
+[Caching and Revalidation with Axios](#axios-caching-revalidation)<br>
 
 `##` Make a project
 
@@ -2422,6 +2423,42 @@ export default async function Home() {
         <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-5">
             <h1 className="text-xl">{joke.value}</h1>
             <RandJoke /> // it is 
+        </main>
+    );
+}
+```
+
+
+`##` Caching and Revalidation with Axios
+## axios-caching-revalidation
+
+- [Caching and Revalidation with Axios](https://github.com/Learn-with-Sumit/rnext/tree/9.2)
+
+```javascript
+  // Manually use cache
+ import axios from "axios";
+import { cache } from "react";
+
+const getJoke = cache(async () => {
+    return axios.get("https://api.chucknorris.io/jokes/random");
+});
+
+export default getJoke;
+
+
+//For Revalidation 
+import getJoke from "@/utils/getJoke";
+import RandJoke from "./components/RandomJoke";
+
+export const revalidate = 10;
+
+export default async function Home() {
+    const joke = await getJoke();
+
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-5">
+            <h1 className="text-xl">{joke.value}</h1>
+            <RandJoke />
         </main>
     );
 }
