@@ -96,6 +96,7 @@
 [Revalidation all fetch requests in a page and its child ](#revalidating-fetching-for-a-page-and-child)<br>
 [De-Duplication ](#de-duplication)<br>
 [Caching and Revalidation with Axios](#axios-caching-revalidation)<br>
+[Static Dynamic Hybrid ISR Rendering](#static-dynamic-hybrid-isr-rendering)<br>
 
 `##` Make a project
 
@@ -2464,3 +2465,15 @@ export default async function Home() {
 }
 ```
 
+`##` Static Dynamic Hybrid ISR Rendering
+## static-dynamic-hybrid-isr-rendering
+
+- [Static Dynamic Hybrid ISR Rendering](https://github.com/Learn-with-Sumit/rnext/tree/10.1)
+
+`##` RSC Rendering
+## rsc-rendering
+  SSG rendering happens in page level
+  RSC rendering happens in component level
+  In Client Component we can keep Child components as children or send as props  but can not import child components
+  But we can import client components in server component
+- [RSC Rendering](https://github.com/Learn-with-Sumit/rnext/tree/10.2)
