@@ -93,7 +93,8 @@
 [Data fetching in the server with fetch at route handler ](#data-fetching-in-server-route-handler)<br>
 [Another way to prevent caching ](#another-way-to-prevent-caching)<br>
 [We can Revalidate the fetching ](#revalidating-fetching)<br>
-[ Revalidation all fetch requests in a page and its child ](#revalidating-fetching-for-a-page-and-child)<br>
+[Revalidation all fetch requests in a page and its child ](#revalidating-fetching-for-a-page-and-child)<br>
+[De-Duplication ](#de-duplication)<br>
 
 `##` Make a project
 
@@ -2346,7 +2347,7 @@ export default async function getJoke() {
 - [We can Revalidate the fetching](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
 
 ```javascript
-// We can Revalidate the fetching like this
+// We can Revalidate the fetching like this (It is recommended to revalidate for each fetch call)
 
 export default async function getJoke() {
     const res = await fetch("https://api.chucknorris.io/jokes/random", {
@@ -2369,6 +2370,7 @@ export default async function getJoke() {
 
 ```javascript
 // We can Revalidate the for a page like this
+//Good to no if we use revalidation the page render as static
 // We no need to revalidate at individual fetch requests like this
 
 export default async function getJoke() {
@@ -2397,3 +2399,31 @@ export default async function Home() {
         </main>
     );
 }
+
+```
+`##` De-Duplication
+## de-duplication
+
+- [De-Duplication](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
+
+```javascript
+  // De Duplication 
+  // Not need to pass props thought both are hitting same api
+  // here  <RandJoke /> hitting same api  const joke = await getJoke();
+import getJoke from "@/utils/getJoke";
+import RandJoke from "./components/RandomJoke";
+
+export const revalidate = 10;
+
+export default async function Home() {
+    const joke = await getJoke();
+
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-5">
+            <h1 className="text-xl">{joke.value}</h1>
+            <RandJoke /> // it is 
+        </main>
+    );
+}
+```
+
