@@ -2474,10 +2474,10 @@ export default async function Home() {
 
 `##` RSC Rendering
 ## rsc-rendering
-  SSG rendering happens in page level
-  RSC rendering happens in component level
-  In Client Component we can keep Child components as children or send as props  but can not import child components
-  But we can import client components in server component
+  SSG rendering happens in page level,
+  RSC rendering happens in component level,
+  In Client Component we can keep Child components as children or send as props  but can not import child components,
+  But we can import client components in server component.
 - [RSC Rendering](https://github.com/Learn-with-Sumit/rnext/tree/10.2)
 
 `##` Composition Pattern rendering 
