@@ -26,7 +26,7 @@
 [How to create and use custom hook and how to use context api with React composition pattern ](#custom-hook)<br>
 [How to make utility function for formatted date](#formatted-date)<br>
 [How to show icon by a function](#dynamic-icon)<br>
-[How to add and remove something from local storage by ,custom hook,  context api and provider](#local-storage-provider-context)<br>
+[How to add and remove something from local storage by ,custom hook, context api and provider](#local-storage-provider-context)<br>
 [Send Value to a hook ](#send-value-to-provider)<br>
 [How to use useDebounce hook ](#how-to-use-debounce)<br>
 [React Router Dom ](#react-router-dom)<br>
@@ -49,8 +49,8 @@
 [Use Reducer Advanced](#useReducer-advanced)<br>
 [Multipart Image Upload](#multipart-image-upload)<br>
 [How to make reuseable components](#reuseable-components)<br>
-[Get Difference from now utility function](#get-difference-from-now )<br>
-[Check the avatar of mine or others](#check-isme-avatar )<br>
+[Get Difference from now utility function](#get-difference-from-now)<br>
+[Check the avatar of mine or others](#check-isme-avatar)<br>
 [New User Registration](#new-user-registration)<br>
 [Implement Like with api call](#implement-like-with-api)<br>
 [Implement Comments with api call](#implement-comments-with-api)<br>
@@ -89,10 +89,10 @@
 [ Server Action - Introduction & Example with MongoDB Database](#server-action-with-mongodb)<br>
 [Data Fetching Patterns and Best Practices - Sequential & Parallel Data Fetching & Progressive Rendering ](#sequential-parallel-progressive-rendering)<br>
 [Full Next Weather Dashboard ](#weather-dashboard)<br>
-
-
+[Data fetching in the server with fetch ](#data-fetching-in-server)<br>
 
 `##` Make a project
+
 ## make-project
 
 ```javascript
@@ -100,24 +100,24 @@ npm create vite@latest tic-tac-toe -- --template react
 ```
 
 `##` Install Tailwind css dependencies
-## tailwind-install
 
+## tailwind-install
 
 ```javascript
 npm install -D tailwindcss postcss autoprefixer
 ```
 
 `##` Initial Tailwind css
-## initialize-tailwind-css
 
+## initialize-tailwind-css
 
 ```javascript
 npx tailwindcss init -p
 ```
 
 `##` at tailwind.config
-## tailwind-css-config
 
+## tailwind-css-config
 
 ```javascript
 content: [
@@ -127,8 +127,8 @@ content: [
 ```
 
 `##` Clean index.css and add below declarations
-## index-css-config
 
+## index-css-config
 
 ```javascript
 @tailwind base;
@@ -137,8 +137,8 @@ content: [
 ```
 
 `##` Add animation using className, at index.css
-## add-animation-at-tailwind
 
+## add-animation-at-tailwind
 
 ```javascript
 @tailwind base;
@@ -166,15 +166,15 @@ content: [
 ```
 
 `##` Basic React Form Handle
-## form-handle
 
+## form-handle
 
 - [How To Handle form In react form code](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/AddTaskModal.jsx)
 - [How To Handle form In react parent code](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/TaskBoard.jsx)
 
 `##` Basic Add and edit by same form in an array
-## basic-add-and-edit-by-same-form
 
+## basic-add-and-edit-by-same-form
 
 - [Form's details](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/AddTaskModal.jsx)
 - [Parents details](https://github.com/Learn-with-Sumit/rnext/blob/2.10/src/task/TaskBoard.jsx)
@@ -205,6 +205,7 @@ function handleEditTask(task) {
 ```
 
 `##` Basic Delete item
+
 ## basic-delete-item
 
 ```javascript
@@ -215,8 +216,8 @@ function handleDeleteTask(taskId) {
 ```
 
 `##` Basic Delete all items
-## basic-delete-all
 
+## basic-delete-all
 
 ```javascript
 function handleDeleteAllClick() {
@@ -226,6 +227,7 @@ function handleDeleteAllClick() {
 ```
 
 `##` Basic Toggle
+
 ## basic-toggle
 
 ```javascript
@@ -259,6 +261,7 @@ function handleFavorite(taskId) {
 ```
 
 `##` Basic Search Implementation
+
 ## basic-search
 
 ```Javascript
@@ -296,6 +299,7 @@ function handleFavorite(taskId) {
 ```
 
 `##` How to implement sort
+
 ## sort-implementations
 
 ```javascript
@@ -373,7 +377,9 @@ export default Sort;
 ```
 
 `##` How to export data by a function
+
 ## export-data-by-function
+
 ```javascript
 function getAllMovies() {
   return data; // Here data is the array and we can import and call the function in other components
@@ -383,6 +389,7 @@ export { getAllMovies };
 ```
 
 `##` How to filter data by a function
+
 ## filter-data-by-function
 
 ```javascript
@@ -394,6 +401,7 @@ export { getFavoriteMovies };
 ```
 
 `##` How to make image url generating function for react vite projects
+
 ## image-url-generator-function
 
 ```javascript
@@ -426,6 +434,7 @@ export default MovieCard;
 ```
 
 `##` How to make Rating components
+
 ## rating-component
 
 ```javascript
@@ -444,15 +453,16 @@ const Rating = ({ value }) => {
 };
 export default Rating;
 
-
 ///use of the rating component, jus pass the value to the rating component which is a number
 <div className="flex items-center space-x-1 mb-5">
   <Rating value={movie?.rating} />
 </div>;
 ```
 
-`##` How to open modal with data 
+`##` How to open modal with data
+
 ## modal-with-data
+
 ```javascript
 
 ///Card codes
@@ -521,8 +531,11 @@ const MovieDetails = ({movie, onClose}) => {
 
 export default MovieDetails;
 ```
-`##`  How to stop propagation
+
+`##` How to stop propagation
+
 ## stop-propagation
+
 ```javascript
 /* eslint-disable react/prop-types */
 import { useState } from "react";
@@ -546,8 +559,8 @@ const MovieCard = ({ movie }) => {
 
   const handleAddToCart = (e, movie) => {
     e.stopPropagation();
-    console.log(movie)
-  }
+    console.log(movie);
+  };
 
   return (
     <>
@@ -555,7 +568,7 @@ const MovieCard = ({ movie }) => {
         <MovieDetails movie={selectedMovie} onClose={handleCloseMovieDetails} />
       )}
       <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
-        <a onClick={() => handleModalClick( movie)} href="#">
+        <a onClick={() => handleModalClick(movie)} href="#">
           <img
             className="w-full object-cover"
             src={getImageUrl(movie?.cover)}
@@ -584,7 +597,9 @@ const MovieCard = ({ movie }) => {
 
 export default MovieCard;
 ```
-`##`  How to use context api
+
+`##` How to use context api
+
 ## context-api
 
 ```javascript
@@ -656,7 +671,7 @@ const MovieCard = ({ movie }) => {
   const handleAddToCart = (e, movie) => {
     e.stopPropagation();
     const found = cartData.find((item) => item.id === movie.id);
-    
+
     if (found) {
       alert("Movie already in cart!");
       return;
@@ -702,7 +717,8 @@ export default MovieCard;
 
 ```
 
-`##`  how to implement dark theme
+`##` how to implement dark theme
+
 ## dark-theme
 
 ```javascript
@@ -748,7 +764,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class",// We have to add this 
+  darkMode: "class",// We have to add this
   theme: {
 		extend: {
 			container: {
@@ -795,7 +811,8 @@ const Page = () => {
 export default Page;
 ```
 
-`##`  how to use useReducer
+`##` how to use useReducer
+
 ## use-reducer
 
 ```javascript
@@ -945,7 +962,7 @@ const ShopingCard = ({ onClose }) => {
   const handleDeleteCartItem = (cartItem) => {
     dispatch({
       type : 'REMOVE_FROM_CART',
-      
+
       payload: {...cartItem}
     })
   };
@@ -1026,7 +1043,8 @@ const ShopingCard = ({ onClose }) => {
 export default ShopingCard;
 ```
 
-`##`  how to use react toastify
+`##` how to use react toastify
+
 ## react-toastify
 
 ```javascript
@@ -1114,12 +1132,14 @@ const MovieCard = ({ movie }) => {
 export default MovieCard;
 ```
 
-`##`  Open weather link
+`##` Open weather link
+
 ## open-weather-map
+
 - [Open weather](https://openweathermap.org/current)
 
+`##` How to set .env variables and import
 
-`##`  How to set .env variables and import
 ## env-setting
 
 ```javascript
@@ -1140,10 +1160,12 @@ dist-ssr
 //Import necessary parameters here like bellow where necessary
  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_WEATHERE_API_KEY}&units=metric`)
 
- ```
+```
 
- `##`  How to create a custom hook and how to use it with context api composition pattern
+`##` How to create a custom hook and how to use it with context api composition pattern
+
 ## custom-hook
+
 ```javascript
  // create a  folder at src called uesWeather or any other name start with the word use
  // a example of  custom hook given below
@@ -1203,10 +1225,10 @@ const useWeather = () => {
 
             setWeatherData(updateWeatherData);
 
-            
+
         } catch (e) {
             setError(e.message);
-            
+
         }finally{
             setLoading({
                 state: false,
@@ -1224,7 +1246,7 @@ const useWeather = () => {
         navigator.geolocation.getCurrentPosition((position) =>{
             featchWeatherData(position.coords.latitude, position.coords.longitude)
         })
-       
+
     }, [])
 
     return {weatherData, loading, error}
@@ -1254,7 +1276,7 @@ export default WeatherBoard;
 
 // use by context api with React composition pattern
 // steps for composition pattern
-// step 1: create folder at src called context inside this create a file called index.js, and create a context one and export it like below 
+// step 1: create folder at src called context inside this create a file called index.js, and create a context one and export it like below
 import { createContext } from "react";
 
 const WeatherContext = createContext("")
@@ -1340,40 +1362,42 @@ export default WeatherBoard;
 
 ```
 
- `##`  How to make utility function for formatted date
+`##` How to make utility function for formatted date
+
 ## formatted-date
+
 ```javascript
- // create a  folder at src called utils then make a file called date-utils.js and make  the function like below
- // data may come like this  :  1726417186
- // after use te function output will be like: 10:19 PM- Sunday, September 15, 2024
- const getFormattedDate = (value, type, isMS) =>{
-    if(!type) return;
+// create a  folder at src called utils then make a file called date-utils.js and make  the function like below
+// data may come like this  :  1726417186
+// after use te function output will be like: 10:19 PM- Sunday, September 15, 2024
+const getFormattedDate = (value, type, isMS) => {
+  if (!type) return;
 
-    if(!isMS) {
-        value = value * 1000;
-    }
+  if (!isMS) {
+    value = value * 1000;
+  }
 
-    const date = new Date(value);
+  const date = new Date(value);
 
-    let options;
+  let options;
 
-    if(type === 'date'){
-        options = {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        }
-    } else if(type === 'time'){
-        options = {
-            hour: 'numeric',
-            minute: 'numeric',
-        }
-    }
-    return new Intl.DateTimeFormat("en-us", options).format(date)
-}
+  if (type === "date") {
+    options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+  } else if (type === "time") {
+    options = {
+      hour: "numeric",
+      minute: "numeric",
+    };
+  }
+  return new Intl.DateTimeFormat("en-us", options).format(date);
+};
 
-export  {getFormattedDate};
+export { getFormattedDate };
 
 //How to use this  utility function for formatted date
 /* eslint-disable react/prop-types */
@@ -1386,17 +1410,22 @@ const WeatherHeading = () => {
   const { climate, location, temperature, time } = weatherData;
   return (
     <div>
-     {/* Other codes  */}
-      <p className="text-sm lg:text-lg">{getFormattedDate(time , "time" , false)}- {getFormattedDate(time, "date", false )}</p>
+      {/* Other codes  */}
+      <p className="text-sm lg:text-lg">
+        {getFormattedDate(time, "time", false)}-{" "}
+        {getFormattedDate(time, "date", false)}
+      </p>
     </div>
   );
 };
 
 export default WeatherHeading;
+```
 
- ```
- `##`  How to show dynamic icon by an function 
+`##` How to show dynamic icon by an function
+
 ## dynamic-icon
+
 ```javascript
 
 //import icon in the component where necessary and make and use  a function like below
@@ -1452,8 +1481,10 @@ export default WeatherHeading;
 
 ```
 
- `##`  How to add and remove something from local storage by ,custom hook,  context api and provider
+`##` How to add and remove something from local storage by ,custom hook, context api and provider
+
 ## local-storage-provider-context
+
 ```javascript
 //create a folder at src called hooks, and make a file called useLocalStorage.js and code like below
 import { useEffect, useState } from "react"
@@ -1465,7 +1496,7 @@ const useLocalStorage = (storageKey, defaultValue) => {
         useEffect(() => {
             localStorage.setItem(storageKey, JSON.stringify(value));
         }, [value, storageKey]);
-    
+
     return [value, setValue];
 }
 
@@ -1491,7 +1522,7 @@ import { createContext } from "react";
 const WeatherContext = createContext("")
 const FavouriteContext = createContext("")
 
-export { WeatherContext, FavouriteContext } 
+export { WeatherContext, FavouriteContext }
 
 
 
@@ -1514,7 +1545,7 @@ const FavouriteProvider = ({children}) => {
                 ])
     }
 
-    const removeFromFavorites = (location)  => { 
+    const removeFromFavorites = (location)  => {
         const restFavorites = favourites.filter((fav) =>{
             return fav.location !== location;
         })
@@ -1616,8 +1647,10 @@ const AddToFavourite = () => {
 export default AddToFavourite;
 ```
 
- `##`  How to send value to a hook
+`##` How to send value to a hook
+
 ## send-value-to-provider
+
 ```javascript
 // First we need to make a provider for location like below
 /* eslint-disable react/prop-types */
@@ -1694,7 +1727,7 @@ const useWeather = () => {
         message: "",
     })
     const {selectedLocation} = useContext(LocationContext) //here we get the location by context
-  
+
     const [error, setError] = useState(null);
 
     const fetchWeatherData = async (latitude, longitude) => {
@@ -1729,10 +1762,10 @@ const useWeather = () => {
 
             setWeatherData(updateWeatherData);
 
-            
+
         } catch (e) {
             setError(e.message);
-            
+
         }finally{
             setLoading({
                 state: false,
@@ -1755,7 +1788,7 @@ const useWeather = () => {
                 fetchWeatherData(position.coords.latitude, position.coords.longitude)
             })
         }
-        return 
+        return
     }, [selectedLocation.longitude, selectedLocation.latitude]) //here we render again if the longitude an latitude has changed
 
     return {weatherData, loading, error}
@@ -1764,8 +1797,10 @@ const useWeather = () => {
 export default useWeather;
 ```
 
-`##`  How to use useDebounce
+`##` How to use useDebounce
+
 ## how-to-use-debounce
+
 ```javascript
 //make a file at hooks folder called "useDebounce"
 // make a debounce function like bellow
@@ -1819,85 +1854,118 @@ function SearchComponent() {
 
 export default SearchComponent;
 ```
+
 `##` React Router Dom
+
 ## react-router-dom
+
 - [React Router Dom](https://github.com/Learn-with-Sumit/rnext/tree/5.1/src)
 
 `##` React Hook Form
+
 ## react-hook-form
+
 - [React Hook Form](https://github.com/Learn-with-Sumit/rnext/tree/5.4)
 
-
 `##` Fetching Data With Axios
+
 ## axios-data-fetching
+
 - [Data Fetching With Axios](https://github.com/Learn-with-Sumit/rnext/tree/5.2/src)
 
 `##` State management with TansStackQuery and Fetching Data With Axios
+
 ## tans-stack-query-fetching-with-axios
+
 - [Data Fetching With Axios and TansStackQuery](https://github.com/Learn-with-Sumit/rnext/tree/5.3)
 
 `##` Suspense and Error Boundaries
+
 ## react-suspense
+
 - [Suspense and Error Boundaries](https://github.com/Learn-with-Sumit/rnext/tree/5.5)
 
-
 `##` React Lazy Load
+
 ## lazy-load
+
 - [React Lazy Load](https://github.com/Learn-with-Sumit/rnext/tree/5.6)
 
 `##` Framer Motion
+
 ## framer-motion
+
 - [Framer Motion](https://github.com/Learn-with-Sumit/rnext/tree/5.7)
 
-`##` Firebase Authentication 
+`##` Firebase Authentication
+
 ## firebase
+
 - [Firebase Authentication](https://github.com/Learn-with-Sumit/rnext/tree/5.8)
 
 `##` React Infinite Scroll
+
 ## infinite-scroll
+
 - [React Infinite Scroll](https://github.com/Learn-with-Sumit/rnext/tree/5.9)
 
 `##` React Styled Component
+
 ## styled-component
+
 - [React Styled Component](https://github.com/Learn-with-Sumit/rnext/tree/5.11)
 
 `##` React Virtualized
+
 ## react-virtualized
+
 - [React Virtualized](https://github.com/Learn-with-Sumit/rnext/tree/5.12)
 
 `##` React Portal
+
 ## react-portal
+
 - [React Portal](https://github.com/Learn-with-Sumit/rnext/tree/5.13)
 
 `##` React Redux
+
 ## react-redux
+
 - [React Redux](https://github.com/Learn-with-Sumit/rnext/tree/5.14)
 
 `##` Tailwind Custom Class
+
 ## tailwind-custom-class
+
 - [Tailwind Custom Class index.css](https://github.com/Learn-with-Sumit/rnext/blob/5.15/src/index.css)
 - [Tailwind Custom Class tailwind.config](https://github.com/Learn-with-Sumit/rnext/blob/5.15/tailwind.config.js)
 
 `##` Private Route
+
 ## private-route
+
 - [PrivateRoutes at routes folder](https://github.com/Learn-with-Sumit/rnext/blob/5.17/src/routes/PrivateRoutes.jsx)
 - [Wrap Routes which are private](https://github.com/Learn-with-Sumit/rnext/blob/5.17/src/App.jsx)
 - [Make auth empty at Logout component](https://github.com/Learn-with-Sumit/rnext/blob/5.17/src/components/auth/Logout.jsx)
 
-
 `##` Store user info at state by api call
+
 ## store-data-by-api-call
+
 - [Store User Data By API Call](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/components/auth/LoginForm.jsx)
 
 `##` JWT Implementation
+
 ## jwt-implementation
+
 - [Create a wrapper of axios api folder](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/api/index.js)
 - [Create a useAxios Hook](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/hooks/useAxios.js)
 - [Example of use: Make a call using this api from useAxios to get profile](https://github.com/Learn-with-Sumit/rnext/blob/5.18/src/pages/ProfilePage.jsx)
 
-
 `##` Use Reducer Advanced
+
 ## useReducer-advanced
+
 - [Actions In Another file](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/actions/index.js)
 - [Create the Reducer](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/reducers/ProfileReducer.js)
 - [Make a context](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/context/index.js)
@@ -1907,44 +1975,62 @@ export default SearchComponent;
 - [Another use case at Change Bio ](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/components/profile/Bio.jsx)
 
 `##` Use Reducer Advanced
+
 ## multipart-image-upload
+
 - [Multipart Image Upload ](https://github.com/Learn-with-Sumit/rnext/blob/5.19/src/components/profile/ProfileImage.jsx)
 
 `##` How to make reuseable components
+
 ## reuseable-components
+
 - [Reuseable components in For Profile ](https://github.com/Learn-with-Sumit/rnext/blob/5.20/src/components/profile/MyPosts.jsx)
 - [Reuseable components in For Home ](https://github.com/Learn-with-Sumit/rnext/blob/5.21/src/pages/HomePage.jsx)
 
 `##` Get Difference from now utility function
-## get-difference-from-now 
+
+## get-difference-from-now
+
 - [Get Difference from now utility function ](https://github.com/Learn-with-Sumit/rnext/blob/5.20/src/utils/index.js)
 
 `##` Check the avatar of mine or others
+
 ## check-isme-avatar
+
 - [Check the avatar of mine or others ](https://github.com/Learn-with-Sumit/rnext/blob/5.20/src/hooks/useAvatar.js)
 
 `##` New User Registration
+
 ## new-user-registration
+
 - [New User Registration](https://github.com/Learn-with-Sumit/rnext/blob/5.22/src/components/auth/RegistrationForm.jsx)
 
-
 `##` Implement Like with api call
+
 ## implement-like-with-api
+
 - [Implement Link with api call](https://github.com/Learn-with-Sumit/rnext/blob/5.23/src/components/posts/PostAction.jsx)
 
 `##` Implement Comments with api call
+
 ## implement-comments-with-api
+
 - [Implement Comments with api call](https://github.com/Learn-with-Sumit/rnext/blob/5.23/src/components/posts/PostComments.jsx)
 
 `##` Implement Comments with api call
+
 ## implement-delete-with-api
-- [Implement Delete  with api call](https://github.com/Learn-with-Sumit/rnext/blob/5.24/src/components/posts/PostHeader.jsx)
+
+- [Implement Delete with api call](https://github.com/Learn-with-Sumit/rnext/blob/5.24/src/components/posts/PostHeader.jsx)
 
 `##` Implement create with api call
+
 ## implement-create-with-api
-- [Implement create  with api call](https://github.com/Learn-with-Sumit/rnext/blob/5.24/src/components/posts/PostEntry.jsx)
+
+- [Implement create with api call](https://github.com/Learn-with-Sumit/rnext/blob/5.24/src/components/posts/PostEntry.jsx)
 
 `##` Next js Installation
+
 ## nextjs-installation
 
 ```javascript
@@ -1952,58 +2038,68 @@ npx create-next-app@latest
 ```
 
 `##` Next js Basic Setup in Installation time
+
 ## nextjs-basic-setup
 
 - [Next js Basic Setup in Installation time](https://prnt.sc/Ga4NfPbGUk4a)
 
 `##` How to make custom link so that it become a client component
+
 ## custom-link
 
 - [Component Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/CustomLink.js)
 - [Uses Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/layout.js)
 
 `##` How to make custom Programmatically navigate
+
 ## programmatically-naviagte
 
 - [Component Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/Button.js)
 - [Uses Part](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/dashboard/settings/page.js)
 
 `##` How to set meta data
+
 ## set-meta-data
 
 - [Set Meta Data like this](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/dashboard/analytics/page.js)
 
 `##` How to get active link
+
 ## get-active-link
 
 - [How to get active link](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/CustomLink.js)
 
 `##` How to get search params
+
 ## get-search-params
 
-- [How to get search  params](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/SortProducts.js)
+- [How to get search params](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/components/SortProducts.js)
 - [Uses](https://github.com/Learn-with-Sumit/rnext/blob/7.6/app/dashboard/settings/page.js)
 
 `##` Add loading at nextjs
+
 ## add-loading-at-nextjs
 
 - [Add loading at nextjs](https://github.com/Learn-with-Sumit/rnext/tree/7.7/app/heavy)
 - [Custom Loading state to part](https://github.com/Learn-with-Sumit/rnext/blob/7.7/app/heavy/page.js)
 
 `##` Show Error In Next js
- ## show-errors-at-nextjs
 
- Error Comments must be a client component
+## show-errors-at-nextjs
+
+Error Comments must be a client component
 
 - [Add a error page at Component Boundary](https://github.com/Learn-with-Sumit/rnext/blob/7.8/app/dashboard/error.js)
 - [Now it can catch server component and Client Component error](https://github.com/Learn-with-Sumit/rnext/blob/7.8/app/dashboard/analytics/page.js)
 
 `##` Route Group
+
 ## add-route-group
 
-- [How to add a route group](https://github.com/Learn-with-Sumit/rnext/tree/7.9/app/(dashboard))
+- [How to add a route group](<https://github.com/Learn-with-Sumit/rnext/tree/7.9/app/(dashboard)>)
 
 `##` How to add More than one RootLayout
+
 ## add-more-than-one-root-layout
 
 ```javascript
@@ -2026,123 +2122,173 @@ app/
 └── page.js               // Home page (root URL /)
 
 ```
+
 `##` How to add dynamic routes
+
 ## dynamic-routes
 
 - [How to add dynamic routes -main page](https://github.com/Learn-with-Sumit/rnext/blob/7.10/app/blogs/page.js)
 - [How to add dynamic routes -child page](https://github.com/Learn-with-Sumit/rnext/blob/7.10/app/blogs/%5Bid%5D/page.js)
 
 `##` How to get ReadMe files content
+
 ## readme-file-content
 
 - [How to get ReadMe files content](https://github.com/Learn-with-Sumit/rnext/blob/7.11/docucraft/lib/doc.js)
 
 `##` How to filter for pathname
+
 ## filter-for-pathname
 
 - [How to filter for pathname](https://github.com/Learn-with-Sumit/rnext/blob/7.12/docucraft/components/Sidebar.jsx)
 
 `##` DocuCraft full Resource
+
 ## docucraft-full-Resource
 
 - [DocuCraft full Resource](https://github.com/Learn-with-Sumit/rnext/tree/7.13/docucraft)
 
 `##` Implement Search In advanced way
+
 ## implement-search-advanced-way
 
 Here need to check how onClick is implemented for Link specially in closeSearchResults function at Search Component (Most Important)
+
 - [Implement Search In advanced way-Search Component](https://github.com/Learn-with-Sumit/rnext/blob/7.13/docucraft/components/Search.jsx)
 - [Implement Search In advanced way-Search Result Component](https://github.com/Learn-with-Sumit/rnext/blob/7.13/docucraft/components/SearchResult.jsx)
 
 `##` Error handling at real life project
+
 ## error-handling-at-real-project
 
 - [Error handling at real life project](https://github.com/Learn-with-Sumit/rnext/blob/7.13/docucraft/app/layout.js)
 
 `##` Parallel Routes
+
 ## parallel-routes
 
 - [Parallel Routes](https://github.com/Learn-with-Sumit/rnext/tree/8.2)
 
 `##` Unmatched and intercepting routes
+
 ## unmatched-and-intercepting-routes
 
 - [Unmatched and intercepting routes](https://github.com/Learn-with-Sumit/rnext/tree/8.3)
 
 `##` Parallel, unmatched and Intercepting Routes combination
+
 ## parallel-and-intercepting-routes-combination
 
 - [Parallel, unmatched and Intercepting Routes combination](https://github.com/Learn-with-Sumit/rnext/tree/8.4)
 
 `##` Route Handlers(CRUD)
+
 ## route-handlers
 
 - [ Route Handlers(CRUD)](https://github.com/Learn-with-Sumit/rnext/tree/8.5)
 
 `##` Route Handlers(Search Params, cookies, caching , Redirecting)
+
 ## search-params-cookies-caching-redirecting
 
 - [ Route Handlers(Search Params, cookies, caching, Redirecting)](https://github.com/Learn-with-Sumit/rnext/tree/8.6)
 
 `##` Middleware
+
 ## middleware
 
 - [ Middleware](https://github.com/Learn-with-Sumit/rnext/tree/8.7)
 
-`##` Next Js Not Found Page 
+`##` Next Js Not Found Page
+
 ## next-js-not-found-page
 
 - [ Next Js Not Found Page](https://github.com/Learn-with-Sumit/rnext/tree/8.8)
 
 `##` Internalization
+
 ## internalization
 
 - [ Internalization](https://github.com/Learn-with-Sumit/rnext/tree/8.9)
 
 `##` Basic Setup of photo feed
+
 ## basic-photo-feed
 
 - [ Basic Setup of photo feed](https://github.com/Learn-with-Sumit/rnext/tree/8.10)
 
 `##` Api creation in next js
+
 ## api-creation-in-next-js
 
 - [ Api creation in next js](https://github.com/Learn-with-Sumit/rnext/tree/8.11)
 
 `##` Internalization Implementation in photo feed
+
 ## internalization-at-photo-feed
 
 - [ Internalization Implementation in photo feed](https://github.com/Learn-with-Sumit/rnext/tree/8.12)
 
 `##` Full code of photo feed
+
 ## full-code-of-photo-feed
 
 - [ Full code of photo feed](https://github.com/Learn-with-Sumit/rnext/tree/8.14)
 
 `##` How to import data Dynamically
+
 ## import-data-dynamically
 
 - [How to import data Dynamically](https://github.com/Learn-with-Sumit/rnext/blob/8.14/photofeed/app/%5Blang%5D/disctionaries.js)
 
 `##` Data fetching, caching, and revalidating techniques in Next.js
+
 ## fetching-catching-revalidation
 
 - [Data fetching, caching, and revalidating techniques in Next.js](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
 - [ Data Fetching - on the server & client with third-party libraries & route handlers](https://github.com/Learn-with-Sumit/rnext/tree/9.2)
 
-`##`  Server Action - Introduction & Example with MongoDB Database
+`##` Server Action - Introduction & Example with MongoDB Database
+
 ## server-action-with-mongodb
 
 - [ Server Action - Introduction & Example with MongoDB Database](https://github.com/Learn-with-Sumit/rnext/tree/9.3)
 - [More Server Action - Introduction & Example with MongoDB Database](https://github.com/Learn-with-Sumit/rnext/tree/9.4)
 
-`##`  Data Fetching Patterns and Best Practices - Sequential & Parallel Data Fetching & Progressive Rendering 
+`##` Data Fetching Patterns and Best Practices - Sequential & Parallel Data Fetching & Progressive Rendering
+
 ## sequential-parallel-progressive-rendering
 
 - [Data Fetching Patterns and Best Practices - Sequential & Parallel Data Fetching & Progressive Rendering ](https://github.com/Learn-with-Sumit/rnext/tree/9.5)
 
+`##` Full Next Weather Dashboard
 
-`##`  Full Next Weather Dashboard
 ## weather-dashboard
 
 - [Full Next Weather Dashboard](https://github.com/Learn-with-Sumit/rnext/tree/9.12)
+
+`##` Data fetching in the server with fetch
+
+## data-fetching-in-server
+- [Data fetching in the server with fetch](https://github.com/Learn-with-Sumit/rnext/tree/9.12)
+
+```javascript
+// Good to know know:
+// get Request in Next is by default cached.
+// To prevent it we need to use cookies like bellow
+import getJoke from "@/utils/getJoke";
+import RandJoke from "./components/RandomJoke";
+import {cookies} from "next/headers";
+
+export default async function Home() {
+  const theme = cookies().get("theme");
+  const joke = await getJoke();
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-5">
+      <h1 className="text-xl">{joke.value}</h1>
+      <RandJoke />
+    </main>
+  );
+}
+```
