@@ -92,6 +92,7 @@
 [Data fetching in the server with fetch ](#data-fetching-in-server)<br>
 [Data fetching in the server with fetch at route handler ](#data-fetching-in-server-route-handler)<br>
 [Another way to prevent caching ](#another-way-to-prevent-caching)<br>
+[We can Revalidate the fetching ](#revalidating-fetching)<br>
 
 `##` Make a project
 
@@ -2323,10 +2324,34 @@ export async function GET(request) {
 
 ```javascript
 // Another way to prevent caching
+// we have to use cache: 'no-store' like this:
 
 export default async function getJoke() {
     const res = await fetch("https://api.chucknorris.io/jokes/random", {
         cache: 'no-store'
+    });
+
+    if (!res.ok) {
+        throw new Error("Fetch error...");
+    }
+
+    return res.json();
+}
+```
+
+`##` We can Revalidate the fetching
+## revalidating-fetching
+
+- [We can Revalidate the fetching](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
+
+```javascript
+// We can Revalidate the fetching like this
+
+export default async function getJoke() {
+    const res = await fetch("https://api.chucknorris.io/jokes/random", {
+        next: {
+          revalidate: 10, // 10 seconds
+        }
     });
 
     if (!res.ok) {
