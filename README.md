@@ -93,6 +93,7 @@
 [Data fetching in the server with fetch at route handler ](#data-fetching-in-server-route-handler)<br>
 [Another way to prevent caching ](#another-way-to-prevent-caching)<br>
 [We can Revalidate the fetching ](#revalidating-fetching)<br>
+[ Revalidation all fetch requests in a page and its child ](#revalidating-fetching-for-a-page-and-child)<br>
 
 `##` Make a project
 
@@ -2361,3 +2362,38 @@ export default async function getJoke() {
     return res.json();
 }
 ```
+`##` Revalidation all fetch requests in a page and its child
+## revalidating-fetching-for-a-page-and-child
+
+- [Revalidation all fetch requests in a page and its child](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
+
+```javascript
+// We can Revalidate the for a page like this
+// We no need to revalidate at individual fetch requests like this
+
+export default async function getJoke() {
+    const res = await fetch("https://api.chucknorris.io/jokes/random");
+
+    if (!res.ok) {
+        throw new Error("Fetch error...");
+    }
+
+    return res.json();
+}
+
+// We need to revalidate at page like this
+import getJoke from "@/utils/getJoke";
+import RandJoke from "./components/RandomJoke";
+
+export const revalidate = 10;
+
+export default async function Home() {
+    const joke = await getJoke();
+
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-5">
+            <h1 className="text-xl">{joke.value}</h1>
+            <RandJoke />
+        </main>
+    );
+}
