@@ -99,6 +99,7 @@
 [Static Dynamic Hybrid ISR Rendering](#static-dynamic-hybrid-isr-rendering)<br>
 [RSC Rendering](#rsc-rendering)<br>
 [Composition Pattern rendering ](#composition-pattern)<br>
+[Cache fetching time to get data to the child to performance ](#catch-fetching-time-to-get-data)<br>
 
 `##` Make a project
 
@@ -2323,7 +2324,9 @@ export async function GET(request) {
   return Response.json(posts);
 }
 ```
+
 `##` Another way to prevent caching
+
 ## another-way-to-prevent-caching
 
 - [Another way to prevent caching](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
@@ -2333,19 +2336,20 @@ export async function GET(request) {
 // we have to use cache: 'no-store' like this:
 
 export default async function getJoke() {
-    const res = await fetch("https://api.chucknorris.io/jokes/random", {
-        cache: 'no-store'
-    });
+  const res = await fetch("https://api.chucknorris.io/jokes/random", {
+    cache: "no-store",
+  });
 
-    if (!res.ok) {
-        throw new Error("Fetch error...");
-    }
+  if (!res.ok) {
+    throw new Error("Fetch error...");
+  }
 
-    return res.json();
+  return res.json();
 }
 ```
 
 `##` We can Revalidate the fetching
+
 ## revalidating-fetching
 
 - [We can Revalidate the fetching](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
@@ -2354,20 +2358,22 @@ export default async function getJoke() {
 // We can Revalidate the fetching like this (It is recommended to revalidate for each fetch call)
 
 export default async function getJoke() {
-    const res = await fetch("https://api.chucknorris.io/jokes/random", {
-        next: {
-          revalidate: 10, // 10 seconds
-        }
-    });
+  const res = await fetch("https://api.chucknorris.io/jokes/random", {
+    next: {
+      revalidate: 10, // 10 seconds
+    },
+  });
 
-    if (!res.ok) {
-        throw new Error("Fetch error...");
-    }
+  if (!res.ok) {
+    throw new Error("Fetch error...");
+  }
 
-    return res.json();
+  return res.json();
 }
 ```
+
 `##` Revalidation all fetch requests in a page and its child
+
 ## revalidating-fetching-for-a-page-and-child
 
 - [Revalidation all fetch requests in a page and its child](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
@@ -2405,34 +2411,36 @@ export default async function Home() {
 }
 
 ```
+
 `##` De-Duplication
+
 ## de-duplication
 
 - [De-Duplication](https://github.com/Learn-with-Sumit/rnext/tree/9.1)
 
 ```javascript
-  // De Duplication 
-  // Not need to pass props thought both are hitting same api
-  // here  <RandJoke /> hitting same api  const joke = await getJoke();
+// De Duplication
+// Not need to pass props thought both are hitting same api
+// here  <RandJoke /> hitting same api  const joke = await getJoke();
 import getJoke from "@/utils/getJoke";
 import RandJoke from "./components/RandomJoke";
 
 export const revalidate = 10;
 
 export default async function Home() {
-    const joke = await getJoke();
+  const joke = await getJoke();
 
-    return (
-        <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-5">
-            <h1 className="text-xl">{joke.value}</h1>
-            <RandJoke /> // it is 
-        </main>
-    );
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-5">
+      <h1 className="text-xl">{joke.value}</h1>
+      <RandJoke /> // it is
+    </main>
+  );
 }
 ```
 
-
 `##` Caching and Revalidation with Axios
+
 ## axios-caching-revalidation
 
 - [Caching and Revalidation with Axios](https://github.com/Learn-with-Sumit/rnext/tree/9.2)
@@ -2449,7 +2457,7 @@ const getJoke = cache(async () => {
 export default getJoke;
 
 
-//For Revalidation 
+//For Revalidation
 import getJoke from "@/utils/getJoke";
 import RandJoke from "./components/RandomJoke";
 
@@ -2468,18 +2476,69 @@ export default async function Home() {
 ```
 
 `##` Static Dynamic Hybrid ISR Rendering
+
 ## static-dynamic-hybrid-isr-rendering
 
 - [Static Dynamic Hybrid ISR Rendering](https://github.com/Learn-with-Sumit/rnext/tree/10.1)
 
 `##` RSC Rendering
+
 ## rsc-rendering
-  SSG rendering happens in page level,
-  RSC rendering happens in component level,
-  In Client Component we can keep Child components as children or send as props  but can not import child components,
-  But we can import client components in server component.
+
+SSG rendering happens in page level,
+RSC rendering happens in component level,
+In Client Component we can keep Child components as children or send as props but can not import child components,
+But we can import client components in server component.
+
 - [RSC Rendering](https://github.com/Learn-with-Sumit/rnext/tree/10.2)
 
-`##` Composition Pattern rendering 
+`##` Composition Pattern rendering
+
 ## composition-pattern
+
+- [Composition Pattern rendering ](https://github.com/Learn-with-Sumit/rnext/tree/10.3)
+
+`##` Cache fetching time to get data to the child to performance
+
+## catch-fetching-time-to-get-data
+
+```javascript
+import connectMongo from "@/dbConnect/connectMongo";
+import User from "@/models/User";
+import { cache } from "react";
+
+export const getUserByEmail = cache(async (email) => {
+  console.log("I am pulling from database");
+  try {
+    await connectMongo();
+
+    // get users
+    const user = await User.findOne({
+      email,
+    });
+
+    return user;
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+//Now if we use the component it will get data from parents
+import NewUserForm from "./components/users/NewUserForm";
+import User from "./components/users/User";
+import UserList from "./components/users/UserList";
+
+export default async function Home() {
+    return (
+        <div className="py-8">
+            <h1 className="text-gray-800">USER REGISTRATION</h1>
+            <NewUserForm />
+            <User />
+            <UserList />
+            <User />
+            <User />
+        </div>
+    );
+}
+```
 - [Composition Pattern rendering ](https://github.com/Learn-with-Sumit/rnext/tree/10.3)
