@@ -100,6 +100,10 @@
 [RSC Rendering](#rsc-rendering)<br>
 [Composition Pattern rendering ](#composition-pattern)<br>
 [Cache fetching time to get data to the child to performance ](#catch-fetching-time-to-get-data)<br>
+[Use environment variables at server ](#env-at-server)<br>
+[Use environment variables at client ](#env-at-client)<br>
+[Font Optimization](#font-optimization)<br>
+[Meta Data ](#meta-data)<br>
 
 `##` Make a project
 
@@ -2529,16 +2533,44 @@ import User from "./components/users/User";
 import UserList from "./components/users/UserList";
 
 export default async function Home() {
-    return (
-        <div className="py-8">
-            <h1 className="text-gray-800">USER REGISTRATION</h1>
-            <NewUserForm />
-            <User />
-            <UserList />
-            <User />
-            <User />
-        </div>
-    );
+  return (
+    <div className="py-8">
+      <h1 className="text-gray-800">USER REGISTRATION</h1>
+      <NewUserForm />
+      <User />
+      <UserList />
+      <User />
+      <User />
+    </div>
+  );
 }
 ```
+
 - [Composition Pattern rendering ](https://github.com/Learn-with-Sumit/rnext/tree/10.3)
+
+`##` Use environment variables at server
+
+## env-at-server
+
+```javascript
+DB_HOST = localhost;
+DB_USER = myuser;
+DB_PASS = mypassword;
+```
+
+`##` Use environment variables at client
+
+## env-at-client
+
+```javascript
+NEXT_PUBLIC_ANALYTICS_ID=abcdefghijk
+```
+`##` Font Optimization
+
+## font-optimization
+- [Font Optimization](https://github.com/Learn-with-Sumit/rnext/tree/10.6)
+
+`##` Meta Data
+
+## meta-data
+- [Meta data ](https://github.com/Learn-with-Sumit/rnext/tree/10.6)
