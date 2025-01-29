@@ -104,6 +104,7 @@
 [Use environment variables at client ](#env-at-client)<br>
 [Font Optimization](#font-optimization)<br>
 [Meta Data ](#meta-data)<br>
+[MongoDB Database Reference ](#mongodb-database)<br>
 
 `##` Make a project
 
@@ -2568,9 +2569,160 @@ NEXT_PUBLIC_ANALYTICS_ID=abcdefghijk
 `##` Font Optimization
 
 ## font-optimization
-- [Font Optimization](https://github.com/Learn-with-Sumit/rnext/tree/10.6)
+- [Font Optimization](https://github.com/Learn-with-Sumit/rnext/tree/10.5)
 
 `##` Meta Data
 
 ## meta-data
 - [Meta data ](https://github.com/Learn-with-Sumit/rnext/tree/10.6)
+
+`##` MongoDB Database Reference
+
+## mongodb-database
+```javascript
+//Steps required to work with MongoDB
+// 1.Download the MongoDB 
+// 2.Download the MongoDB Compass which is graphical user interface which helps us to manage MongoDB Database easily
+// 3.Open MongoDB Compass create database and create collection as per requirements
+// 4.Upload json file or create 
+// 5. Install mongoose for make model and scheme for crud operation. It is a data modeling tool
+// 6.At .env keep the mongodb database url like bellow
+
+MONGO_URI=mongodb://127.0.0.1:27017/Momentous
+
+// 7.Make a folder at root folder called services and make a file in it called mongo.js and make a function to connect to database like bellow
+import mongoose from "mongoose";
+
+export async function dbConnect() {
+    try{
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+        console.log("Connected");
+        return conn;
+    } catch(err){
+        console.log(err);
+    }
+}
+
+//8. Import the function at the top root layout like bellow
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import { dbConnect } from "@/services/mongo";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = {
+  title: "Momentous",
+  description: "An Event Booking Application",
+};
+
+export default async function RootLayout({ children }) {
+  await dbConnect();
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <Navbar />
+        <main className="py-8">
+          {children}
+        </main>
+      </body>
+    </html>
+  );
+}
+//9. Have to check is it connected or not. If connected we can see "Connected" string though I have consoled it
+//10. Then make a folder at root level and make a file in it for model exp: moments-model.js like bellow
+
+import mongoose, {Schema} from "mongoose";
+
+const schema = new Schema({
+  name: {
+    required: true,
+    type: String
+  },
+  details: {
+    required: true,
+    type: String
+  },
+  location: {
+    required: true,
+    type: String
+  },
+  imageUrl: {
+    required: true,
+    type: String
+  },
+  interested_ids: {
+    required: false,
+    type: Array
+  },
+  going_ids: {
+    required: false,
+    type: Array
+  },
+  swgs: {
+    required: false,
+    type: Array
+  }
+});
+
+export const momentsModel = mongoose.models.moments ?? mongoose.model("moments", schema);
+
+//11. Then a make folder at root called db and make a file called called queries.js and make queries like bellow
+import { momentsModel } from "@/models/moments-model";
+import { replaceMongoIdInArray, replaceMongoIdInObject } from "@/utils/data-util";
+
+async function getAllMoments() {
+    const allMoments = await momentsModel.find().lean();
+    return replaceMongoIdInArray(allMoments);
+}
+
+async function getMomentById(momentId) {
+    const moment = await momentsModel.findById(momentId).lean();
+    return replaceMongoIdInObject(event);
+}
+
+export {
+    getAllMoments,
+    getMomentById
+}
+
+// 12. Then check it by calling anywhere like bellow:
+import { getAllMoments } from "@/db/queries"
+import EventCard from "./EventCard"
+
+const EventList = async () => {
+  const allMoments =  await getAllMoments();
+  console.log(allMoments);
+  
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+      <EventCard />
+    </div>
+  )
+}
+
+export default EventList
+
+
+// 14. We can process mongoDb default _id to make it simple "id" by a utility function. For that make file a utility folder called data-util and process like bellow 
+import { eventModel } from "@/models/event-models"
+import { replaceMongoIdInArray, replaceMongoIdInObject } from "@/utils/data-util";
+
+async function getAllEvents() {
+    const allEvents = await eventModel.find().lean();
+    return replaceMongoIdInArray(allEvents);
+}
+
+async function getEventById(eventId) {
+    const event = await eventModel.findById(eventId).lean();
+    return replaceMongoIdInObject(event);
+}
+
+export {
+    getAllEvents,
+    getEventById
+}
+
+// 15. Then use this utility function like shown at step 11
+```
+- [Meta data](https://github.com/Learn-with-Sumit/rnext/tree/10.1)
