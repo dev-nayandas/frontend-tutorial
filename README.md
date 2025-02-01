@@ -105,6 +105,7 @@
 [Font Optimization](#font-optimization)<br>
 [Meta Data ](#meta-data)<br>
 [MongoDB Database Reference ](#mongodb-database)<br>
+[Nextjs Authentication with database and content api ](#nextjs-authentication-with-database)<br>
 
 `##` Make a project
 
