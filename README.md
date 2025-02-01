@@ -2709,7 +2709,7 @@ import { eventModel } from "@/models/event-models"
 import { replaceMongoIdInArray, replaceMongoIdInObject } from "@/utils/data-util";
 
 async function getAllEvents() {
-    const allEvents = await eventModel.find().lean();
+    const allEvents = await eventModel.find().lean();// Here lean used to not bring the meta data
     return replaceMongoIdInArray(allEvents);
 }
 
@@ -2726,3 +2726,53 @@ export {
 // 15. Then use this utility function like shown at step 11
 ```
 - [MongoDB Database Reference](https://github.com/Learn-with-Sumit/rnext/tree/10.11)
+
+
+`##` Nextjs Authentication with database and content api
+
+## nextjs-authentication-with-database
+```javascript
+//steps
+//1. Make a login page  
+//2. Keep form to from in a other component at LoginForm.js. It is better to keep all the auth related components in auth folder
+//3. Add a Register page and keep form to form in component RegisterForm.js
+// What will happen here : Form submit then sever action will call then server action call the method in the quires then method will push the data in mongodb.
+//4. Make model and schema
+// Thinks to remember : form field name should exact match with the schema
+//5.write method form create user
+//6. Make a server action called register user
+// If we need to use a file as server action we need to explicitly say that "use server"
+// We can check database and is the user created
+// Then we we need to work for login 
+//7.We need to write another server action called findUserByCredentials
+//8.We need use this server action at loginForm , login form can a client component though we want to show errors and loading 
+//8.Then need to write a server action for login
+// Now we can login 
+// Now we will learn how to work with context api in next js 
+//9.Make a context
+//10.Make a provider
+//11.Make a provider(provider must be client component and it can be use in server components too)
+//12.Use this provider at root layout
+//13.We can make a hook to prevent repetitive code for that we can make a hook
+//13.We can handle login logout by same component for that we need modify navbar
+//14.The login and logout components
+//15. Set auth after login 
+
+
+```
+- [Login Page](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/app/login/page.js)
+- [Login Form Component](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/components/auth/LoginForm.jsx)
+- [Registration page ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/app/register/page.js)
+- [Registration Form Component ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/components/auth/RegistrationForm.jsx)
+- [Make model and schema ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/models/user-model.js)
+- [Method at Quires for crete user ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/db/queries.js)
+- [Server action for Register User](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/app/actions/index.js)
+- [Server action  in Login form which is a client Component](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/components/auth/LoginForm.jsx)
+- [Server action for login ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/app/actions/index.js)
+- [Make a context first  ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/app/contexts/index.js)
+- [Make a make a provider  ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/app/providers/AuthProvider.js)
+- [Use Provider at Root Layout ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/app/layout.js)
+- [custom hook for auth](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/app/hooks/useAuth.js)
+- [Handel login logout by same component](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/components/Navbar.jsx)
+- [SignInOut Component ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/components/auth/SignInOut.jsx)
+- [Set auth after login  ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/components/auth/LoginForm.jsx)
