@@ -105,7 +105,8 @@
 [Font Optimization](#font-optimization)<br>
 [Meta Data ](#meta-data)<br>
 [MongoDB Database Reference ](#mongodb-database)<br>
-[Nextjs Authentication with database and content api ](#nextjs-authentication-with-database)<br>
+[Nextjs Authentication with database and context api ](#nextjs-authentication-with-database)<br>
+[Toggle in Next js with database ](#toggle-in-nextjs-with-database)<br>
 
 `##` Make a project
 
@@ -2729,7 +2730,7 @@ export {
 - [MongoDB Database Reference](https://github.com/Learn-with-Sumit/rnext/tree/10.11)
 
 
-`##` Nextjs Authentication with database and content api
+`##` Nextjs Authentication with database and context api
 
 ## nextjs-authentication-with-database
 ```javascript
@@ -2777,3 +2778,26 @@ export {
 - [Handel login logout by same component](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/components/Navbar.jsx)
 - [SignInOut Component ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/components/auth/SignInOut.jsx)
 - [Set auth after login  ](https://github.com/Learn-with-Sumit/rnext/blob/10.12/eventry/components/auth/LoginForm.jsx)
+
+
+`##` Toggle in Next js with database
+
+## toggle-in-nextjs-with-database
+```javascript
+//Steps
+//1.Write a function for query in the database
+//2.Write a function for action at server action
+//We have to know is the user is logged in or not. if not redirect to login. That's why we need useAuth in action button
+//4.Then we need to write logic in the action button
+//Here addInterestedEvent not used at the button  directly though it is a server action and we can not show loading indicator. that's why we use useTransition hook of react
+//5.Then we have to pass the necessary props to the ActionsButtons where it is used
+//6.Now we can check is it working or not
+
+```
+- [Write a function called updateInterest for query in the database](https://github.com/Learn-with-Sumit/rnext/blob/10.13/eventry/db/queries.js)
+- [Write a function called addInterestedEvent for action in the server action](https://github.com/Learn-with-Sumit/rnext/blob/10.13/eventry/app/actions/index.js)
+- [Write a function called updateInterest for query in the database](https://github.com/Learn-with-Sumit/rnext/blob/10.13/eventry/db/queries.js)
+- [Logic at action button](https://github.com/Learn-with-Sumit/rnext/blob/10.13/eventry/components/ActionButtons.jsx)
+- [Pass the necessary props to the ActionsButtons where it is used](https://github.com/Learn-with-Sumit/rnext/blob/10.13/eventry/components/landing/EventCard.jsx)
+- [Pass the necessary props to the ActionsButtons where it is used](https://github.com/Learn-with-Sumit/rnext/blob/10.13/eventry/components/details/HeroSection.jsx)
+
