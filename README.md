@@ -109,6 +109,7 @@
 [Toggle in Next js with database ](#toggle-in-nextjs-with-database)<br>
 [Implement going to the event  ](#implementation-going-to-the-event)<br>
 [Add Google Event Schema  ](#add-google-event-schema)<br>
+[Set Dynamic Meta Data for SEO](#dynamic-meta-data)<br>
 
 `##` Make a project
 
@@ -2839,3 +2840,7 @@ export {
 - [Google Schema link](https://developers.google.com/search/docs/appearance/structured-data/event)
 - [EventSchemaScript Creation](https://github.com/Learn-with-Sumit/rnext/blob/10.15/eventry/components/meta/EventSchemaScript.jsx)
 - [Add the EventSchemaScript](https://github.com/Learn-with-Sumit/rnext/blob/10.15/eventry/components/landing/EventCard.jsx)
+
+`##` Set Dynamic Meta Data for SEO
+## dynamic-meta-data
+- [Set Dynamic Meta Data for SEO](https://learnwithsumit.com/rnext/courses/rnext/project-eventry-part-7-how-to-set-up-dynamic-meta-data)
