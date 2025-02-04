@@ -108,6 +108,7 @@
 [Nextjs Authentication with database and context api ](#nextjs-authentication-with-database)<br>
 [Toggle in Next js with database ](#toggle-in-nextjs-with-database)<br>
 [Implement going to the event  ](#implementation-going-to-the-event)<br>
+[Add Google Event Schema  ](#add-google-event-schema)<br>
 
 `##` Make a project
 
@@ -2826,3 +2827,15 @@ export {
 - [Write css for disabled button at global css ](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/app/globals.css)
 - [Pass going event ids though it expecting the ids to actionButton where it is used](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/components/landing/EventCard.jsx)
 - [Pass going event ids though it expecting the ids to actionButton where it is used](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/components/details/HeroSection.jsx)
+
+`##` Add Google Event Schema
+
+## add-google-event-schema
+```javascript
+// Steps:
+//1.Create a folder at components called meta then make a new file called EventSchemaScript in the folder
+//2.Add the event schema where I get all individual event
+```
+- [Google Schema link](https://developers.google.com/search/docs/appearance/structured-data/event)
+- [EventSchemaScript Creation](https://github.com/Learn-with-Sumit/rnext/blob/10.15/eventry/components/meta/EventSchemaScript.jsx)
+- [Add the EventSchemaScript](https://github.com/Learn-with-Sumit/rnext/blob/10.15/eventry/components/landing/EventCard.jsx)
