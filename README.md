@@ -110,6 +110,7 @@
 [Implement going to the event  ](#implementation-going-to-the-event)<br>
 [Add Google Event Schema  ](#add-google-event-schema)<br>
 [Set Dynamic Meta Data for SEO](#dynamic-meta-data)<br>
+[Server Side Search ](#server-side-search)<br>
 
 `##` Make a project
 
@@ -2843,4 +2844,22 @@ export {
 
 `##` Set Dynamic Meta Data for SEO
 ## dynamic-meta-data
-- [Set Dynamic Meta Data for SEO](https://learnwithsumit.com/rnext/courses/rnext/project-eventry-part-7-how-to-set-up-dynamic-meta-data)
+
+- [Set Dynamic Meta Data for SEO](https://github.com/Learn-with-Sumit/rnext/blob/10.16/eventry/app/details/%5Bid%5D/page.js)
+
+
+`##` Server Side Search 
+## server-side-search
+```javascript
+// Steps:
+//1. Write logic for search
+//2.Go to main page, get and send the query
+//3.Receive  the query value and send it as parameter of get all data function
+//4.Modify the get all data function
+//4.We can use useDebounce function
+```
+- [Search Logic](https://github.com/Learn-with-Sumit/rnext/blob/10.17/eventry/components/landing/Search.jsx)
+- [Get and Send Query](https://github.com/Learn-with-Sumit/rnext/blob/10.17/eventry/app/page.js)
+- [Receive and send query to the get all data function as parameter](https://github.com/Learn-with-Sumit/rnext/blob/10.17/eventry/app/page.js)
+- [Modify the get all data function](https://github.com/Learn-with-Sumit/rnext/blob/10.17/eventry/db/queries.js)
+- [We can use useDebounce function](https://github.com/Learn-with-Sumit/rnext/blob/10.17/eventry/app/hooks/useDebounce.js)
