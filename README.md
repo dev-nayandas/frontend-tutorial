@@ -107,6 +107,7 @@
 [MongoDB Database Reference ](#mongodb-database)<br>
 [Nextjs Authentication with database and context api ](#nextjs-authentication-with-database)<br>
 [Toggle in Next js with database ](#toggle-in-nextjs-with-database)<br>
+[Implement going to the event  ](#implementation-going-to-the-event)<br>
 
 `##` Make a project
 
@@ -2801,3 +2802,27 @@ export {
 - [Pass the necessary props to the ActionsButtons where it is used](https://github.com/Learn-with-Sumit/rnext/blob/10.13/eventry/components/landing/EventCard.jsx)
 - [Pass the necessary props to the ActionsButtons where it is used](https://github.com/Learn-with-Sumit/rnext/blob/10.13/eventry/components/details/HeroSection.jsx)
 
+
+`##` Implement going to the event 
+
+## implementation-going-to-the-event
+```javascript
+//Steps
+//1.Write a function for query in the database
+//2.Write a function at going button to navigate conditionally
+//3.Get the event id as props and send it to the PaymentForm component
+//4. Write a function at server action to update going
+//5. Now write logic at payment form for submit to the database
+//5. Then we have to disable the button though we have payment
+//6. Write css for disabled button at global css
+//7.Pass going event ids though it expecting the ids to actionButton
+```
+- [Write a function called updateGoing for query in the database](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/db/queries.js)
+- [Write a function at going button to navigate conditionally](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/components/ActionButtons.jsx)
+- [Get the event id as props and send it to the PaymentForm component](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/app/details/%5Bid%5D/page.js)
+- [Write a function at server action called addGoingEvent to update going](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/app/actions/index.js)
+- [Now call and pass the parameter to the function for submitting ](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/components/payments/PaymentForm.jsx)
+- [Disable the going button at actionButtons ](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/components/ActionButtons.jsx)
+- [Write css for disabled button at global css ](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/app/globals.css)
+- [Pass going event ids though it expecting the ids to actionButton where it is used](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/components/landing/EventCard.jsx)
+- [Pass going event ids though it expecting the ids to actionButton where it is used](https://github.com/Learn-with-Sumit/rnext/blob/10.14/eventry/components/details/HeroSection.jsx)
