@@ -111,6 +111,8 @@
 [Add Google Event Schema  ](#add-google-event-schema)<br>
 [Set Dynamic Meta Data for SEO](#dynamic-meta-data)<br>
 [Server Side Search ](#server-side-search)<br>
+[Where to add Suspense ](#suspense-boundary)<br>
+[Blurry effect on image loading ](#blurry-effect-on-image-loading)<br>
 
 `##` Make a project
 
@@ -2863,3 +2865,29 @@ export {
 - [Receive and send query to the get all data function as parameter](https://github.com/Learn-with-Sumit/rnext/blob/10.17/eventry/app/page.js)
 - [Modify the get all data function](https://github.com/Learn-with-Sumit/rnext/blob/10.17/eventry/db/queries.js)
 - [We can use useDebounce function](https://github.com/Learn-with-Sumit/rnext/blob/10.17/eventry/app/hooks/useDebounce.js)
+
+
+`##` Where to add Suspense 
+## suspense-boundary
+```javascript
+//We should add suspense boundary where data calling 
+```
+- [Where to add Suspense ](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/app/page.js)
+
+`##` Blurry effect on image loading
+## blurry-effect-on-image-loading
+```javascript
+//Steps:
+//1. Need to install few packages
+npm i plaiceholder @plaiceholder/next sharp
+//2. In case of installing sharp it may show error on latest node version then we need following command
+npm i sharp --ignore-engines
+//3. Create a new file utility file to generate blurry images
+//4. We need to import withPlaiceholder at nex.config.mjs
+//5. Here we need add two attributes to the Image Element
+
+```
+- [Blurry Image generator](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/utils/blur-generator.js)
+- [Import withPlaiceholder](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/next.config.mjs)
+- [Now use the blur generator where we used images](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/components/details/HeroSection.jsx)
+- [Eventry full code](https://github.com/Learn-with-Sumit/rnext/tree/10.18/eventry)
