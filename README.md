@@ -113,6 +113,7 @@
 [Server Side Search ](#server-side-search)<br>
 [Where to add Suspense ](#suspense-boundary)<br>
 [Blurry effect on image loading ](#blurry-effect-on-image-loading)<br>
+[Eventry Full Code](#eventry-full-code)<br>
 
 `##` Make a project
 
@@ -2890,4 +2891,10 @@ npm i sharp --ignore-engines
 - [Blurry Image generator](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/utils/blur-generator.js)
 - [Import withPlaiceholder](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/next.config.mjs)
 - [Now use the blur generator where we used images](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/components/details/HeroSection.jsx)
+- [Eventry full code](https://github.com/Learn-with-Sumit/rnext/tree/10.18/eventry)
+
+
+`##` Eventry Full Code
+## eventry-full-code
+
 - [Eventry full code](https://github.com/Learn-with-Sumit/rnext/tree/10.18/eventry)
