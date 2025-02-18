@@ -2891,10 +2891,58 @@ npm i sharp --ignore-engines
 - [Blurry Image generator](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/utils/blur-generator.js)
 - [Import withPlaiceholder](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/next.config.mjs)
 - [Now use the blur generator where we used images](https://github.com/Learn-with-Sumit/rnext/blob/10.18/eventry/components/details/HeroSection.jsx)
-- [Eventry full code](https://github.com/Learn-with-Sumit/rnext/tree/10.18/eventry)
 
 
 `##` Eventry Full Code
 ## eventry-full-code
 
 - [Eventry full code](https://github.com/Learn-with-Sumit/rnext/tree/10.18/eventry)
+
+`##` Next Auth 
+## next-auth
+
+```javascript
+//Steps:
+//1. Install Next Auth
+//2. Make a auth.js file at root
+//3. Need client id and client secret for social login from google cloud console (make credential from O auth client )
+//4. Keep the client secret for social login at .env
+//5. Make a api route
+//6. We need a Auth secret
+//7. We can get Auth secret by two ways 1. if we installed openssl we can get a secret by the command openssl rand -hex 32
+//8. We can get Auth secret by another way from a website 
+//9. At Header Any other component we get get the Auth session
+//10. Implementation Sign In and SignOut
+//11. Add Server Action
+//12. In this way we can Implement other social media sign in  and sign out
+//13. We can store user information at database for that we need install a adapter and mongodb
+//14. After that we need to create a collection called users
+//15. We need to store MONGO_DB_CONNECTION_STRING at .env, like MONGO_DB_CONNECTION_STRING=mongodb://localhost:27017/next-auth-course
+//16. We need to make a folder called lib and make a file for Mongo Client Promise 
+//17. Then we need to use this at auth.js at adapter . Now we can see when we login in user session accounts and user at mongodb connection
+//19. To login and register by email and password we need to make a dummy user email and password at mongodb user collection
+//20. Then we need make a new route and login form component for login
+//21. Then we need to write a server action for login
+//22. Then we need to set up necessary things for CredentialsProvider at auth.js
+//23. Then we need install Mongoose and create models to retrieve data from database using credentials
+//24. Then we connect to Mongo 
+//25. Use this dbConnect at auth.js
+```
+
+- [Make  Auth Js file at root](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/auth.js)
+- [Make  a Api route like this](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/app/api/auth/%5B...nextauth%5D/route.js)
+- [How to get client id and secret](https://prnt.sc/hfHGkOQaHzdj)
+- [Auth Secrete key generator](https://generate-secret.vercel.app/64)
+- [Get Auth Session ](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/app/components/Header.jsx)
+- [Sign In Implementation ](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/app/components/Signin.jsx)
+- [Sign Out Implementation ](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/app/components/Signout.jsx)
+- [Add Server action for sign in and sign out ](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/app/actions/index.js)
+- [Mongo Client promise file ](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/lib/mongoClinetPromise.js)
+- [Login Route](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/app/login/page.js)
+- [Login form Component](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/app/components/LoginForm.jsx)
+- [Server action for login](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/app/actions/index.js)
+- [CredentialsProvider by jwt at auth.js](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/auth.js)
+- [Models forget user credential user info](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/models/user-model.js)
+- [Use this user model at ](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/auth.js)
+- [Connect with mongo](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/lib/mongo.js)
+- [Use this dbConnect at auth.js](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/auth.js)
