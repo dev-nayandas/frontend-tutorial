@@ -114,6 +114,9 @@
 [Where to add Suspense ](#suspense-boundary)<br>
 [Blurry effect on image loading ](#blurry-effect-on-image-loading)<br>
 [Eventry Full Code](#eventry-full-code)<br>
+[Next auth](#next-auth)<br>
+[Basic Typescript](#basic-typescript)<br>
+[Prisma Reference](#prisma-reference)<br>
 
 `##` Make a project
 
@@ -2946,3 +2949,46 @@ npm i sharp --ignore-engines
 - [Use this user model at ](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/auth.js)
 - [Connect with mongo](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/lib/mongo.js)
 - [Use this dbConnect at auth.js](https://github.com/Learn-with-Sumit/rnext/blob/11.next-auth/crash-course/auth.js)
+
+
+`##` Basic TypeScript
+## basic-typescript
+```javascript
+// Basic TypeScript implementation
+//1. Create a new project
+//2. Install TypeScript by the command npm install typescript --save-dev
+//3. We need to init typescript by the command tsc --init
+//4. We need to uncomment outDir from tsconfig.json and provide dist 
+//5. we need to tsc -w to run the project in watch mode
+```
+- [Typescript Reference](https://github.com/Learn-with-Sumit/rnext/tree/11.typescript)
+
+`##` Work With Prisma
+## prisma-reference
+```javascript
+//1. Install Prisma: npm install prisma --save-dev
+//2. Initialize prisma: npx prisma init
+//3. Install mongodb: npm i mongodb or any other database
+//4. Set mongodb as Replica set or we can use mongodb atlas
+//5. At .env keep database url and cluster name 
+//6. Install Prisma client: npm install @prisma/client
+//7. Make Folder called lib at root and make a file called db.js and keep client here 
+//8. Change necessary things at schema.prisma and models
+//9. Generate prisma: npx prisma generate
+//10. Push Models to database: npx prisma db push
+//11. Create api Routes
+//12. If we want to use another database we need to change database url at .env and change provider name at schema.prisma
+//13. We have to push onece more if we change database: npx prisma db push
+
+```
+- [Prisma client](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/lib/db.js)
+- [Prisma Models](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/prisma/schema.prisma)
+- [Api routes Create](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/app/api/pin/create/route.js)
+- [Api routes Get](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/app/api/pin/route.js)
+- [Get all records](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/app/page.js)
+- [Server Actions](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/app/actions/index.js)
+- [Form for create data](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/app/_components/add-pin.jsx)
+- [Edit a Record](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/app/api/pin/%5BpinId%5D/edit/route.js)
+- [Delete a Record](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/app/api/pin/%5BpinId%5D/delete/route.js)
+- [If we want to use postgresql](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-postgresql/pins/prisma/schema.prisma)
+
