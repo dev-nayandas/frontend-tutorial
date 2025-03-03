@@ -117,6 +117,7 @@
 [Next auth](#next-auth)<br>
 [Basic Typescript](#basic-typescript)<br>
 [Prisma Reference](#prisma-reference)<br>
+[GraphQL Reference](#graph-ql)<br>
 
 `##` Make a project
 
@@ -2992,3 +2993,14 @@ npm i sharp --ignore-engines
 - [Delete a Record](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-mongo/pins/app/api/pin/%5BpinId%5D/delete/route.js)
 - [If we want to use postgresql](https://github.com/Learn-with-Sumit/rnext/blob/next-js-prisma-postgresql/pins/prisma/schema.prisma)
 
+`##` GraphQL Reference
+## graph-ql
+```javascript
+//1. Install graphql and graphql-request
+//2. Make a client at lib folder and make a file GraphQLClient.js like bellow
+//3. Write Query at queries folder and make a file called blog-data.js like bellow
+```
+
+- [GraphQLClient](https://github.com/Learn-with-Sumit/rnext/blob/11.8/blogcast/lib/graphQLClient.js)
+- [Queries](https://github.com/Learn-with-Sumit/rnext/blob/11.8/blogcast/queries/blog-data.js)
+- [BlogCast Full code](https://github.com/Learn-with-Sumit/rnext/tree/11.8)
