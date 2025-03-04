@@ -118,6 +118,7 @@
 [Basic Typescript](#basic-typescript)<br>
 [Prisma Reference](#prisma-reference)<br>
 [GraphQL Reference](#graph-ql)<br>
+[Testing Reference](#testing)<br>
 
 `##` Make a project
 
@@ -3006,7 +3007,7 @@ npm i sharp --ignore-engines
 - [BlogCast Full code](https://github.com/Learn-with-Sumit/rnext/tree/11.8)
 
 `##` Testing Reference
-## Testing
+## testing
 ```javascript
 //1.We can test in two ways : unit test and end to end test
 //2. We can unit test by vitest 
