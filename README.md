@@ -3004,3 +3004,17 @@ npm i sharp --ignore-engines
 - [GraphQLClient](https://github.com/Learn-with-Sumit/rnext/blob/11.8/blogcast/lib/graphQLClient.js)
 - [Queries](https://github.com/Learn-with-Sumit/rnext/blob/11.8/blogcast/queries/blog-data.js)
 - [BlogCast Full code](https://github.com/Learn-with-Sumit/rnext/tree/11.8)
+
+`##` Testing Reference
+## Testing
+```javascript
+//1.We can test in two ways : unit test and end to end test
+//2. We can unit test by vitest 
+//3. We can e2e test by playWrite 
+```
+
+- [Unit test of single element](https://github.com/Learn-with-Sumit/rnext/blob/test-debug/test-debug-nextjs/app/page.test.jsx)
+- [Unit test of single element](https://github.com/Learn-with-Sumit/rnext/blob/test-debug/test-debug-nextjs/app/components/home.test.jsx)
+- [e2e test](https://github.com/Learn-with-Sumit/rnext/blob/test-debug/test-debug-nextjs/e2e/lws.spec.js)
+- [Vitest Installation](https://nextjs.org/docs/app/building-your-application/testing/vitest)
+- [Playwrite Installation](https://nextjs.org/docs/app/building-your-application/testing/playwright)
