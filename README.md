@@ -119,6 +119,7 @@
 [Prisma Reference](#prisma-reference)<br>
 [GraphQL Reference](#graph-ql)<br>
 [Testing Reference](#testing)<br>
+[Project Stay Swift](#stay-swift)<br>
 
 `##` Make a project
 
@@ -3019,3 +3020,42 @@ npm i sharp --ignore-engines
 - [e2e test](https://github.com/Learn-with-Sumit/rnext/blob/test-debug/test-debug-nextjs/e2e/lws.spec.js)
 - [Vitest Installation](https://nextjs.org/docs/app/building-your-application/testing/vitest)
 - [Playwrite Installation](https://nextjs.org/docs/app/building-your-application/testing/playwright)
+
+
+`##` Project Stay Swift
+## stay-swift
+```javascript
+//1. Analyze requirements
+//2. Crete all components and page 
+//3. Create a database and all the required collection and import dummy data
+//4. Make Models schema
+//5. Connect Database at use the connect function at RootLayout to connect
+//6. Write all the queries and check the allHotels query at HotelList
+//7. We can show login and registration conditionally based on Multiple rootLayout pattern to avoid make the whole navbar client component
+//8. We can use here route group 
+//9. Make a RootLayout to each route group
+//10. Sent a props to the navbar from both layout to control hide and show the login and register 
+//11. Now we can think about Authentication for the we need to install next auth lated version 
+//12. We need to make a auth config file at root folder
+//13. Then we need to create a auth route to provide fallback url
+//14. We need to keep  client id and client secret from google console and auth secret at env file
+//15. Then edit the Social Login  page 
+//16. We can pass a props to the social login component to show signIn or Register 
+//17. We can use a package called mongodb adapter to save the user info directly to the database for the we need to install mongo db and mongodb adapter
+//18. We need to make a mongodb client 
+//19. Then use the adapter and client at auth.js 
+//20. Now if we login again then we will the the new login user info at database
+//21. Now we need to crete logout component
+//21. Edit the navbar to show the current user name
+```
+- [Steps Overview](https://prnt.sc/DMBWo1iHVRdO)
+- [Models](https://github.com/Learn-with-Sumit/rnext/tree/11.project-2/stay-swift/models)
+- [Db Connection](https://github.com/Learn-with-Sumit/rnext/blob/11.project-2/stay-swift/service/momgo.js)
+- [Queries](https://github.com/Learn-with-Sumit/rnext/blob/11.project-2/stay-swift/database/queries/index.js)
+- [Auth Config](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/auth.js)
+- [Auth Route](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/app/api/auth/%5B...nextauth%5D/route.js)
+- [Social Login Page](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/components/auth/SocialLogins.jsx)
+- [Mongodb client](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/database/mongoClientPromise.js)
+- [Use of adapter and  client promise](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/auth.js)
+- [Logout Component ](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/components/auth/Logout.jsx)
+- [Navbar](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/components/Navbar.jsx)
