@@ -3047,6 +3047,10 @@ npm i sharp --ignore-engines
 //20. Now if we login again then we will the the new login user info at database
 //21. Now we need to crete logout component
 //21. Edit the navbar to show the current user name
+//22.For Register new user we need to make register route here we need bcrypt library for encrypt password
+//23.Then We need to necessary think a registration form and we need to match by bcrypt then
+//24. Protected Route: For Protected route middleware is best but is this project we can't use middleware because of we can't use mongoDbAdapter at middleware
+//25. In that case we can use the session like for protected route
 ```
 - [Steps Overview](https://prnt.sc/DMBWo1iHVRdO)
 - [Models](https://github.com/Learn-with-Sumit/rnext/tree/11.project-2/stay-swift/models)
@@ -3059,3 +3063,8 @@ npm i sharp --ignore-engines
 - [Use of adapter and  client promise](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/auth.js)
 - [Logout Component ](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/components/auth/Logout.jsx)
 - [Navbar](https://github.com/Learn-with-Sumit/rnext/blob/11.project-3/stay-swift/components/Navbar.jsx)
+- [Register Route](https://github.com/Learn-with-Sumit/rnext/blob/11.project-4/stay-swift/app/api/auth/register/route.js)
+- [Registration Form](https://github.com/Learn-with-Sumit/rnext/blob/11.project-4/stay-swift/app/api/auth/register/route.js)
+- [Protect the necessary route like this](https://github.com/Learn-with-Sumit/rnext/blob/11.project-6/stay-swift/app/(home)/bookings/page.js)
+
+
