@@ -3058,6 +3058,16 @@ npm i sharp --ignore-engines
 //30. Then we can send necessary info to hotel details components 
 //31. Tailwind class whitespace-pre-wrap used to proper line break in paragraph
 //32. Show the first item  in a layout then other elements in other layout
+//33. We can implement search like bellow. First change Search Component the pass necessary props to search component
+//34. We have to implement search in a way that a booking hotel can't be booked in between date of check in and check out
+//35. For that we have to pass the necessary props to the hotel list component, then modify  the hotel list component, the query function allHotels and write a utility function to check is in between.
+//36. Then if a hotel is booked then we have to say sold out. that why we need to add this at  HotelSummaryInfo component and disabled the button
+//37. When need the search parameter value in details page too, that's why wee need to modify few component.
+//38. First of all we need to send necessary props to Hotel card
+//39. Then we need to receive as props and again send to HotelSummaryInfo component
+//40. Then we need to receive the props at HotelSummaryInfo and make params and use it for url
+//41. Then we can get the url value at hotel details page and send them to query function
+//42. Then we need to modify getHotelById function 
 ```
 - [Steps Overview](https://prnt.sc/DMBWo1iHVRdO)
 - [Models](https://github.com/Learn-with-Sumit/rnext/tree/11.project-2/stay-swift/models)
@@ -3077,6 +3087,17 @@ npm i sharp --ignore-engines
 - [Get rating for a hotel](https://github.com/Learn-with-Sumit/rnext/blob/11.project-7/stay-swift/database/queries/index.js)
 - [Hotel rating component](https://github.com/Learn-with-Sumit/rnext/blob/11.project-7/stay-swift/components/hotel/HotelRating.jsx)
 - [Show the first item  in a layout then other elements in other layout](https://github.com/Learn-with-Sumit/rnext/blob/11.project-7/stay-swift/components/hotel/details/Gallery.jsx)
+- [Search Component](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/components/search/Search.jsx)
+- [Pass Props to Search Component](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/app/(home)/hotels/page.js)
+- [Pass Props to HotelList Component](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/app/(home)/hotels/page.js)
+- [Modified HotelList Component](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/components/hotel/HotelList.jsx)
+- [Modify allHotels query function](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/database/queries/index.js)
+- [Utility function to check is in between](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/utils/data-util.js)
+- [Utility function to check is in between](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/components/hotel/HotelSummaryInfo.jsx)
+- [Send Props to Hotel card](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/components/hotel/HotelList.jsx)
+- [HotelSummaryInfo](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/components/hotel/HotelSummaryInfo.jsx)
+- [Hotel Detail Page ](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/app/(home)/hotels/%5Bid%5D/page.js)
+- [Modified getHotelById function  ](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/app/(home)/hotels/%5Bid%5D/page.js)
 
 
 
