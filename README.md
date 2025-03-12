@@ -3051,6 +3051,13 @@ npm i sharp --ignore-engines
 //23.Then We need to necessary think a registration form and we need to match by bcrypt then
 //24. Protected Route: For Protected route middleware is best but is this project we can't use middleware because of we can't use mongoDbAdapter at middleware
 //25. In that case we can use the session like for protected route
+//26.Then We can map all hotels 
+//27. Get rating for a hotel query 
+//28. Get Review for a hotel query
+//29. Hotel rating component
+//30. Then we can send necessary info to hotel details components 
+//31. Tailwind class whitespace-pre-wrap used to proper line break in paragraph
+//32. Show the first item  in a layout then other elements in other layout
 ```
 - [Steps Overview](https://prnt.sc/DMBWo1iHVRdO)
 - [Models](https://github.com/Learn-with-Sumit/rnext/tree/11.project-2/stay-swift/models)
@@ -3066,5 +3073,11 @@ npm i sharp --ignore-engines
 - [Register Route](https://github.com/Learn-with-Sumit/rnext/blob/11.project-4/stay-swift/app/api/auth/register/route.js)
 - [Registration Form](https://github.com/Learn-with-Sumit/rnext/blob/11.project-4/stay-swift/app/api/auth/register/route.js)
 - [Protect the necessary route like this](https://github.com/Learn-with-Sumit/rnext/blob/11.project-6/stay-swift/app/(home)/bookings/page.js)
+- [Get rating for a hotel](https://github.com/Learn-with-Sumit/rnext/blob/11.project-7/stay-swift/database/queries/index.js)
+- [Get rating for a hotel](https://github.com/Learn-with-Sumit/rnext/blob/11.project-7/stay-swift/database/queries/index.js)
+- [Hotel rating component](https://github.com/Learn-with-Sumit/rnext/blob/11.project-7/stay-swift/components/hotel/HotelRating.jsx)
+- [Show the first item  in a layout then other elements in other layout](https://github.com/Learn-with-Sumit/rnext/blob/11.project-7/stay-swift/components/hotel/details/Gallery.jsx)
+
+
 
 
