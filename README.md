@@ -3097,7 +3097,7 @@ npm i sharp --ignore-engines
 - [Send Props to Hotel card](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/components/hotel/HotelList.jsx)
 - [HotelSummaryInfo](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/components/hotel/HotelSummaryInfo.jsx)
 - [Hotel Detail Page ](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/app/(home)/hotels/%5Bid%5D/page.js)
-- [Modified getHotelById function  ](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/app/(home)/hotels/%5Bid%5D/page.js)
+- [Modified getHotelById function  ](https://github.com/Learn-with-Sumit/rnext/blob/11.project-8/stay-swift/database/queries/index.js)
 
 
 
